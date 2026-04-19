@@ -177,28 +177,7 @@
     }
 
     /* STATS */
-    .stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); position: relative; z-index: 1; }
 
-    .stats-inner {
-      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
-      display: flex;
-    }
-
-    .stat-item {
-      padding: 1.2rem 2.5rem 1.2rem 0;
-      border-right: 1px solid var(--border);
-      margin-right: 2.5rem;
-    }
-
-    .stat-item:last-child { border-right: none; margin-right: 0; }
-
-    .stat-num {
-      font-family: var(--mono); font-size: 1.55rem; font-weight: 700;
-      color: var(--cyan); line-height: 1;
-    }
-
-    .stat-num sup { color: var(--amber); font-size: 0.9rem; }
-    .stat-label { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
 
     /* LAYOUT */
     .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
@@ -215,7 +194,8 @@
       background: var(--cyan-bg);
       border: 1px solid rgba(0,229,255,0.2);
       display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
+      font-family: var(--mono); font-size: 0.7rem; font-weight: 700;
+      color: var(--cyan);
     }
 
     .section-title { font-size: 1.1rem; font-weight: 600; color: var(--text); }
@@ -284,11 +264,12 @@
     }
 
     .cert-badge {
-      width: 38px; height: 38px; border-radius: 8px;
+      width: 42px; height: 38px; border-radius: 8px;
       background: var(--cyan-bg);
       border: 1px solid rgba(0,229,255,0.2);
       display: flex; align-items: center; justify-content: center;
-      font-size: 16px; flex-shrink: 0;
+      font-family: var(--mono); font-size: 0.6rem; font-weight: 700;
+      color: var(--cyan); flex-shrink: 0; letter-spacing: 0.05em;
     }
 
     .cert-name { font-size: 0.85rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.2rem; color: var(--text); }
@@ -498,38 +479,19 @@
   </div>
 </div>
 
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <div class="stat-num">4<sup>+</sup></div>
-      <div class="stat-label">Projekte</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">3<sup>+</sup></div>
-      <div class="stat-label">Cloud-Plattformen</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">50<sup>+</sup></div>
-      <div class="stat-label">Technologien</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">4<sup>+</sup></div>
-      <div class="stat-label">Zertifizierungen</div>
-    </div>
-  </div>
-</div>
+
 
 <div class="container">
 
   <section class="section" id="skills">
     <div class="section-header">
-      <div class="section-icon">⚙️</div>
+      <div class="section-icon">//</div>
       <h2 class="section-title">Kompetenzen</h2>
       <a href="#skills" class="section-anchor">#skills</a>
     </div>
     <div class="skills-grid">
       <div class="skill-group">
-        <div class="skill-group-title">☁ Cloud & Infrastruktur</div>
+        <div class="skill-group-title">Cloud & Infrastruktur</div>
         <div class="skill-tags">
           <span class="skill-tag cyan">AWS EKS</span>
           <span class="skill-tag cyan">Azure</span>
@@ -544,7 +506,7 @@
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title"> CI/CD & DevSecOps</div>
+        <div class="skill-group-title">CI/CD & DevSecOps</div>
         <div class="skill-tags">
           <span class="skill-tag amber">Jenkins</span>
           <span class="skill-tag amber">GitHub Actions</span>
@@ -557,7 +519,7 @@
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title"> MLOps & Data Science</div>
+        <div class="skill-group-title">MLOps & Data Science</div>
         <div class="skill-tags">
           <span class="skill-tag violet">MLflow</span>
           <span class="skill-tag violet">Databricks</span>
@@ -573,7 +535,7 @@
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">📊 Data Engineering</div>
+        <div class="skill-group-title">Data Engineering</div>
         <div class="skill-tags">
           <span class="skill-tag emerald">Kafka</span>
           <span class="skill-tag emerald">Spark / PySpark</span>
@@ -586,7 +548,7 @@
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title"> Monitoring & Observability</div>
+        <div class="skill-group-title">Monitoring & Observability</div>
         <div class="skill-tags">
           <span class="skill-tag cyan">Prometheus</span>
           <span class="skill-tag cyan">Grafana</span>
@@ -595,7 +557,7 @@
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title"> Sprachen & Edge</div>
+        <div class="skill-group-title">Sprachen & Edge</div>
         <div class="skill-tags">
           <span class="skill-tag">Python</span>
           <span class="skill-tag">R</span>
@@ -613,13 +575,13 @@
 
   <section class="section" id="certifications">
     <div class="section-header">
-      <div class="section-icon"> </div>
+      <div class="section-icon">//</div>
       <h2 class="section-title">Zertifizierungen</h2>
       <a href="#certifications" class="section-anchor">#certifications</a>
     </div>
     <div class="certs-grid">
       <div class="cert-card">
-        <div class="cert-badge">👁</div>
+        <div class="cert-badge">CV</div>
         <div>
           <div class="cert-name">Master Computer Vision (CNN, YOLO, RNN)</div>
           <div class="cert-issuer">OpenCV · TensorFlow · PyTorch</div>
@@ -627,7 +589,7 @@
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-badge"> </div>
+        <div class="cert-badge">SEC</div>
         <div>
           <div class="cert-name">DevOps Engineer & DevSecOps</div>
           <div class="cert-issuer">Azure DevOps</div>
@@ -635,7 +597,7 @@
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-badge"> </div>
+        <div class="cert-badge">AI</div>
         <div>
           <div class="cert-name">Applied AI Lab — Deep Learning for Computer Vision</div>
           <div class="cert-issuer">WorldQuant University</div>
@@ -643,7 +605,7 @@
         </div>
       </div>
       <div class="cert-card">
-        <div class="cert-badge"> </div>
+        <div class="cert-badge">DEV</div>
         <div>
           <div class="cert-name">DevOps Engineer</div>
           <div class="cert-issuer">Université Paris Sorbonne</div>
@@ -657,7 +619,7 @@
 
   <section class="section" id="projects">
     <div class="section-header">
-      <div class="section-icon"> </div>
+      <div class="section-icon">//</div>
       <h2 class="section-title">Projekte</h2>
       <a href="#projects" class="section-anchor">#projects</a>
     </div>
@@ -817,7 +779,7 @@
 
   <section class="section" id="contact">
     <div class="section-header">
-      <div class="section-icon"> </div>
+      <div class="section-icon">//</div>
       <h2 class="section-title">Kontakt</h2>
       <a href="#contact" class="section-anchor">#contact</a>
     </div>
