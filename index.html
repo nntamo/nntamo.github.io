@@ -3,21 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fernandez — DevOps & MLOps Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <title>Fernandez Nntamo — DevOps & MLOps Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #080c10;
-      --surface: #0d1117;
-      --surface2: #161b22;
-      --border: #21262d;
-      --accent: #00d4aa;
-      --accent2: #3b82f6;
-      --accent3: #f59e0b;
-      --text: #e6edf3;
-      --muted: #8b949e;
-      --mono: 'Space Mono', monospace;
-      --sans: 'DM Sans', sans-serif;
+      --bg:        #0a0c10;
+      --surface:   #111318;
+      --surface2:  #181c23;
+      --surface3:  #1e2330;
+      --border:    #1f2535;
+      --border2:   #2a3045;
+
+      /* CYAN ÉLECTRIQUE — couleur principale */
+      --cyan:      #00e5ff;
+      --cyan-dim:  #00b8cc;
+      --cyan-glow: rgba(0,229,255,0.12);
+      --cyan-bg:   rgba(0,229,255,0.06);
+
+      /* Accents secondaires */
+      --violet:    #a855f7;
+      --violet-bg: rgba(168,85,247,0.08);
+      --emerald:   #10d97e;
+      --emerald-bg:rgba(16,217,126,0.08);
+      --amber:     #fbbf24;
+      --amber-bg:  rgba(251,191,36,0.08);
+      --coral:     #ff6b6b;
+      --coral-bg:  rgba(255,107,107,0.08);
+
+      --text:      #e8edf5;
+      --muted:     #7a8499;
+      --muted2:    #404859;
+
+      --mono: 'JetBrains Mono', monospace;
+      --sans: 'Inter', sans-serif;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,724 +45,790 @@
       color: var(--text);
       font-family: var(--sans);
       min-height: 100vh;
-      overflow-x: hidden;
     }
 
-    /* Grid background */
+    /* subtle grid */
     body::before {
       content: '';
-      position: fixed;
-      inset: 0;
+      position: fixed; inset: 0;
       background-image:
-        linear-gradient(rgba(0,212,170,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,212,170,0.03) 1px, transparent 1px);
-      background-size: 40px 40px;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Glow orb */
-    body::after {
-      content: '';
-      position: fixed;
-      top: -200px;
-      right: -200px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(0,212,170,0.08) 0%, transparent 70%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      position: relative;
-      z-index: 1;
+        linear-gradient(rgba(0,229,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.02) 1px, transparent 1px);
+      background-size: 36px 36px;
+      pointer-events: none; z-index: 0;
     }
 
     /* NAV */
     nav {
-      padding: 1.5rem 0;
+      background: rgba(10,12,16,0.88);
       border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: rgba(8,12,16,0.85);
-      backdrop-filter: blur(12px);
-      z-index: 100;
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(16px);
     }
 
-    nav .inner {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      height: 58px;
     }
 
     .logo {
-      font-family: var(--mono);
-      font-size: 0.9rem;
-      color: var(--accent);
-      letter-spacing: 0.05em;
+      font-family: var(--mono); font-size: 0.82rem; font-weight: 700;
+      color: var(--text); text-decoration: none;
+      display: flex; align-items: center; gap: 9px;
     }
 
-    .logo span { color: var(--muted); }
-
-    nav a {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: color 0.2s;
+    .logo-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--cyan);
+      box-shadow: 0 0 8px var(--cyan);
     }
 
-    nav a:hover { color: var(--accent); }
+    .nav-links { display: flex; list-style: none; }
 
-    nav .links { display: flex; gap: 2rem; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+      color: var(--muted); text-decoration: none;
+      padding: 0 1rem; height: 58px;
+      display: flex; align-items: center;
+      border-bottom: 2px solid transparent;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      transition: all 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--cyan); border-bottom-color: var(--cyan); }
 
     /* HERO */
     .hero {
-      padding: 6rem 0 5rem;
-      position: relative;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 4rem 0;
+      position: relative; overflow: hidden;
+      z-index: 1;
     }
+
+    /* cyan glow top-right */
+    .hero::after {
+      content: '';
+      position: absolute; top: -120px; right: -120px;
+      width: 480px; height: 480px;
+      background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+      display: flex; align-items: center; gap: 3rem;
+      position: relative; z-index: 1;
+    }
+
+    .avatar {
+      width: 112px; height: 112px; border-radius: 50%;
+      background: linear-gradient(135deg, #00e5ff 0%, #a855f7 100%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 1.8rem; font-weight: 700;
+      color: #0a0c10; flex-shrink: 0;
+      border: 2px solid rgba(0,229,255,0.3);
+      box-shadow: 0 0 24px rgba(0,229,255,0.2);
+    }
+
+    .hero-content { flex: 1; }
 
     .hero-tag {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--accent);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      font-family: var(--mono); font-size: 0.68rem;
+      color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      display: flex; align-items: center; gap: 0.6rem;
     }
 
-    .hero-tag::before {
-      content: '';
-      width: 2rem;
-      height: 1px;
-      background: var(--accent);
-    }
+    .hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--cyan); }
 
-    h1 {
-      font-family: var(--mono);
-      font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.02em;
-    }
-
-    h1 .highlight { color: var(--accent); }
-
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 580px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      transition: all 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #080c10;
-      font-weight: 700;
-    }
-
-    .btn-primary:hover {
-      background: #00b894;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(0,212,170,0.3);
-    }
-
-    .btn-ghost {
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* STACK BADGES */
-    .stack-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 3rem;
-    }
-
-    .badge {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      padding: 0.3rem 0.75rem;
-      border-radius: 2px;
-      letter-spacing: 0.05em;
-      border: 1px solid;
-    }
-
-    .badge-green { border-color: rgba(0,212,170,0.3); color: var(--accent); background: rgba(0,212,170,0.05); }
-    .badge-blue { border-color: rgba(59,130,246,0.3); color: var(--accent2); background: rgba(59,130,246,0.05); }
-    .badge-amber { border-color: rgba(245,158,11,0.3); color: var(--accent3); background: rgba(245,158,11,0.05); }
-    .badge-muted { border-color: var(--border); color: var(--muted); background: transparent; }
-
-    /* SECTION */
-    section { padding: 5rem 0; border-top: 1px solid var(--border); }
-
-    .section-label {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      color: var(--accent);
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-
-    h2 {
-      font-family: var(--mono);
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 3rem;
-      letter-spacing: -0.02em;
-    }
-
-    /* PROJECTS */
-    .projects-grid {
-      display: grid;
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2rem;
-      transition: all 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 3px; height: 100%;
-      background: var(--accent);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .project-card:hover {
-      border-color: rgba(0,212,170,0.3);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    }
-
-    .project-card:hover::before { opacity: 1; }
-
-    .project-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-      gap: 1rem;
-    }
-
-    .project-title {
-      font-family: var(--mono);
-      font-size: 1.05rem;
-      font-weight: 700;
+    .hero-name {
+      font-size: 2.1rem; font-weight: 700;
+      letter-spacing: -0.025em; margin-bottom: 0.3rem;
       color: var(--text);
     }
 
-    .project-type {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 2px;
-      background: rgba(0,212,170,0.1);
-      color: var(--accent);
-      border: 1px solid rgba(0,212,170,0.2);
-      white-space: nowrap;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+    .hero-name span { color: var(--cyan); }
+
+    .hero-role { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.2rem; }
+
+    .hero-desc {
+      font-size: 0.91rem; color: var(--muted);
+      line-height: 1.78; max-width: 580px; margin-bottom: 1.5rem;
     }
 
-    .project-desc {
-      color: var(--muted);
-      font-size: 0.92rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
+    .hero-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
 
-    .project-highlights {
-      list-style: none;
-      margin-bottom: 1.5rem;
-      display: grid;
-      gap: 0.4rem;
-    }
-
-    .project-highlights li {
-      font-size: 0.85rem;
-      color: var(--muted);
-      display: flex;
-      align-items: baseline;
-      gap: 0.5rem;
-    }
-
-    .project-highlights li::before {
-      content: '→';
-      color: var(--accent);
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      flex-shrink: 0;
-    }
-
-    .project-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-    .tech-tag {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      padding: 0.2rem 0.5rem;
-      background: var(--surface2);
-      color: var(--muted);
-      border-radius: 2px;
-      letter-spacing: 0.05em;
-    }
-
-    .project-link {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--accent);
+    .social-btn {
+      font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
+      padding: 0.45rem 1rem; border-radius: 6px;
       text-decoration: none;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      transition: gap 0.2s;
+      border: 1px solid var(--border2);
+      color: var(--muted); background: var(--surface2);
+      transition: all 0.2s;
+      display: flex; align-items: center; gap: 0.45rem;
     }
 
-    .project-link:hover { gap: 0.7rem; }
+    .social-btn:hover {
+      border-color: var(--cyan); color: var(--cyan);
+      background: var(--cyan-bg);
+      box-shadow: 0 0 12px var(--cyan-glow);
+    }
 
-    /* CERTIFICATIONS */
+    /* STATS */
+    .stats-bar { background: var(--surface); border-bottom: 1px solid var(--border); position: relative; z-index: 1; }
+
+    .stats-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
+      display: flex;
+    }
+
+    .stat-item {
+      padding: 1.2rem 2.5rem 1.2rem 0;
+      border-right: 1px solid var(--border);
+      margin-right: 2.5rem;
+    }
+
+    .stat-item:last-child { border-right: none; margin-right: 0; }
+
+    .stat-num {
+      font-family: var(--mono); font-size: 1.55rem; font-weight: 700;
+      color: var(--cyan); line-height: 1;
+    }
+
+    .stat-num sup { color: var(--amber); font-size: 0.9rem; }
+    .stat-label { font-size: 0.72rem; color: var(--muted); margin-top: 3px; }
+
+    /* LAYOUT */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+    .section { padding: 3.5rem 0; }
+
+    .section-header {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-icon {
+      width: 30px; height: 30px; border-radius: 7px;
+      background: var(--cyan-bg);
+      border: 1px solid rgba(0,229,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
+    }
+
+    .section-title { font-size: 1.1rem; font-weight: 600; color: var(--text); }
+
+    .section-anchor {
+      font-family: var(--mono); font-size: 0.68rem;
+      color: var(--muted2); margin-left: auto; text-decoration: none;
+    }
+
+    .section-anchor:hover { color: var(--cyan); }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-group {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .skill-group:hover { border-color: var(--border2); }
+
+    .skill-group-title {
+      font-size: 0.72rem; font-weight: 600; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 0.9rem;
+    }
+
+    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    .skill-tag {
+      font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+      padding: 0.22rem 0.6rem; border-radius: 4px;
+      border: 1px solid var(--border2); color: var(--muted);
+      background: var(--surface2);
+    }
+
+    .skill-tag.cyan  { background: var(--cyan-bg);    color: var(--cyan);    border-color: rgba(0,229,255,0.2); }
+    .skill-tag.violet{ background: var(--violet-bg);  color: var(--violet);  border-color: rgba(168,85,247,0.2); }
+    .skill-tag.emerald{background: var(--emerald-bg); color: var(--emerald); border-color: rgba(16,217,126,0.2); }
+    .skill-tag.amber { background: var(--amber-bg);   color: var(--amber);   border-color: rgba(251,191,36,0.2); }
+
+    /* CERTS */
     .certs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 1rem;
     }
 
     .cert-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 1.25rem 1.5rem;
+      border-radius: 10px; padding: 1.25rem 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .cert-card:hover {
+      border-color: rgba(0,229,255,0.35);
+      box-shadow: 0 0 20px var(--cyan-glow);
+    }
+
+    .cert-badge {
+      width: 38px; height: 38px; border-radius: 8px;
+      background: var(--cyan-bg);
+      border: 1px solid rgba(0,229,255,0.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; flex-shrink: 0;
+    }
+
+    .cert-name { font-size: 0.85rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.2rem; color: var(--text); }
+    .cert-issuer { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
+    .cert-status {
+      font-family: var(--mono); font-size: 0.66rem; font-weight: 600;
+      padding: 0.15rem 0.45rem; border-radius: 4px;
+      background: var(--emerald-bg); color: var(--emerald);
+      border: 1px solid rgba(16,217,126,0.2);
+      display: inline-block; margin-top: 0.4rem;
+    }
+
+    /* PROJECTS */
+    .filter-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+
+    .filter-btn {
+      font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
+      padding: 0.35rem 0.9rem; border-radius: 20px;
+      border: 1px solid var(--border2);
+      color: var(--muted); background: var(--surface);
+      cursor: pointer; transition: all 0.15s; letter-spacing: 0.03em;
+    }
+
+    .filter-btn:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-bg); }
+    .filter-btn.active { background: var(--cyan); color: #0a0c10; border-color: var(--cyan); font-weight: 700; }
+
+    .projects-grid { display: grid; gap: 1.25rem; }
+
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px; overflow: hidden;
       display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      transition: border-color 0.2s;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
     }
 
-    .cert-card:hover { border-color: rgba(59,130,246,0.4); }
-
-    .cert-name {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.4;
+    .project-card:hover {
+      border-color: rgba(0,229,255,0.3);
+      box-shadow: 0 4px 24px rgba(0,229,255,0.08);
+      transform: translateY(-2px);
     }
 
-    .cert-issuer {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-      letter-spacing: 0.05em;
+    .project-card.hidden { display: none; }
+
+    .project-accent { width: 3px; flex-shrink: 0; }
+    .project-accent.devops  { background: var(--cyan); }
+    .project-accent.cicd    { background: var(--amber); }
+    .project-accent.mlops   { background: var(--violet); }
+    .project-accent.data    { background: var(--emerald); }
+
+    .project-body { padding: 1.75rem 2rem; flex: 1; }
+
+    .project-header {
+      display: flex; justify-content: space-between;
+      align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem;
+    }
+
+    .project-title { font-size: 0.98rem; font-weight: 600; color: var(--text); }
+
+    .project-badge {
+      font-family: var(--mono); font-size: 0.62rem; font-weight: 600;
+      padding: 0.2rem 0.55rem; border-radius: 4px;
+      white-space: nowrap; flex-shrink: 0; letter-spacing: 0.05em;
+    }
+
+    .badge-devops  { background: var(--cyan-bg);    color: var(--cyan);    border: 1px solid rgba(0,229,255,0.2); }
+    .badge-cicd    { background: var(--amber-bg);   color: var(--amber);   border: 1px solid rgba(251,191,36,0.2); }
+    .badge-mlops   { background: var(--violet-bg);  color: var(--violet);  border: 1px solid rgba(168,85,247,0.2); }
+    .badge-data    { background: var(--emerald-bg); color: var(--emerald); border: 1px solid rgba(16,217,126,0.2); }
+
+    .project-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.72; margin-bottom: 1.1rem; }
+
+    .project-highlights { list-style: none; margin-bottom: 1.25rem; display: grid; gap: 0.35rem; }
+
+    .project-highlights li {
+      font-size: 0.82rem; color: var(--muted);
+      display: flex; align-items: baseline; gap: 0.5rem; line-height: 1.55;
+    }
+
+    .project-highlights li::before {
+      content: '›'; color: var(--cyan);
+      font-family: var(--mono); font-size: 0.85rem; flex-shrink: 0;
+    }
+
+    .project-footer {
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap;
+      gap: 0.75rem; padding-top: 1.1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .tech-tag {
+      font-family: var(--mono); font-size: 0.65rem;
+      padding: 0.18rem 0.5rem;
+      background: var(--surface2); color: var(--muted);
+      border-radius: 4px; border: 1px solid var(--border);
+    }
+
+    .project-link {
+      font-family: var(--mono); font-size: 0.7rem; font-weight: 600;
+      color: var(--cyan); text-decoration: none;
+      display: flex; align-items: center; gap: 0.35rem;
+      padding: 0.38rem 0.85rem;
+      border: 1px solid rgba(0,229,255,0.35); border-radius: 6px;
+      transition: all 0.18s; white-space: nowrap; letter-spacing: 0.05em;
+    }
+
+    .project-link:hover {
+      background: var(--cyan); color: #0a0c10;
+      box-shadow: 0 0 14px rgba(0,229,255,0.3);
     }
 
     /* CONTACT */
-    .contact-block {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 2rem;
-      flex-wrap: wrap;
+    .contact-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 2.5rem;
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 2rem; flex-wrap: wrap;
+      position: relative; overflow: hidden;
     }
 
-    .contact-text h3 {
-      font-family: var(--mono);
-      font-size: 1.1rem;
-      margin-bottom: 0.5rem;
+    .contact-card::before {
+      content: '';
+      position: absolute; bottom: -60px; right: -60px;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%);
+      pointer-events: none;
     }
 
-    .contact-text p {
-      color: var(--muted);
-      font-size: 0.9rem;
+    .contact-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); }
+    .contact-card p { font-size: 0.87rem; color: var(--muted); }
+
+    .btn-primary {
+      font-family: var(--mono); font-size: 0.78rem; font-weight: 700;
+      padding: 0.7rem 1.5rem; border-radius: 8px;
+      background: var(--cyan); color: #0a0c10;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: all 0.2s; border: none; letter-spacing: 0.05em;
     }
+
+    .btn-primary:hover {
+      background: #33ecff;
+      box-shadow: 0 0 20px rgba(0,229,255,0.4);
+      transform: translateY(-1px);
+    }
+
+    .section-divider { border: none; border-top: 1px solid var(--border); }
 
     /* FOOTER */
     footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 0;
-      text-align: center;
+      background: var(--surface); border-top: 1px solid var(--border);
+      padding: 1.5rem 0; text-align: center; position: relative; z-index: 1;
     }
 
-    footer p {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-      letter-spacing: 0.1em;
-    }
+    footer p { font-family: var(--mono); font-size: 0.7rem; color: var(--muted2); }
+    footer span { color: var(--cyan); }
 
-    footer span { color: var(--accent); }
-
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero > * { animation: fadeUp 0.6s ease both; }
-    .hero .hero-tag { animation-delay: 0.1s; }
-    .hero h1 { animation-delay: 0.2s; }
-    .hero .hero-desc { animation-delay: 0.3s; }
-    .hero .hero-cta { animation-delay: 0.4s; }
-    .hero .stack-row { animation-delay: 0.5s; }
-
-    /* TERMINAL CURSOR */
-    .cursor {
-      display: inline-block;
-      width: 2px;
-      height: 1em;
-      background: var(--accent);
-      margin-left: 4px;
-      vertical-align: middle;
-      animation: blink 1s step-end infinite;
-    }
-
-    @keyframes blink {
-      50% { opacity: 0; }
+    @media (max-width: 640px) {
+      .hero-inner { flex-direction: column; text-align: center; }
+      .hero-links { justify-content: center; }
+      .hero-tag { justify-content: center; }
+      .stats-inner { flex-wrap: wrap; }
+      .stat-item { border-right: none; margin-right: 0; padding: 0.75rem 0; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
 <nav>
-  <div class="inner">
-    <div class="logo">nntamo<span>.github.io</span></div>
-    <div class="links">
-      <a href="#projekte">Projekte</a>
-      <a href="#zertifikate">Zertifikate</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-dot"></div>
+      nntamo.github.io
+    </a>
+    <ul class="nav-links">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#certifications">Zertifikate</a></li>
+      <li><a href="#projects">Projekte</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
   </div>
 </nav>
 
-<div class="container">
-
-  <!-- HERO -->
-  <div class="hero">
-    <div class="hero-tag">Portfolio — DevOps · MLOps Engineering · Data Science</div>
-    <h1>Fernandez<br><span class="highlight">Nntamo</span><span class="cursor"></span></h1>
-    <p class="hero-desc">
-      Ich konzipiere, implementiere und betreibe Cloud-Infrastrukturen, CI/CD-Pipelines 
-      und Data Services auf Kubernetes — mit Fokus auf DevSecOps, Security-by-Design, 
-      Zero-Trust-Architekturen, MLOps, ML(Sec)Ops und (Industrial) Data Science.
-    </p>
-    <div class="hero-cta">
-      <a href="#projekte" class="btn btn-primary">→ Projekte ansehen</a>
-      <a href="#kontakt" class="btn btn-ghost">Kontakt aufnehmen</a>
-    </div>
-    <div class="stack-row">
-      <span class="badge badge-green">Kubernetes</span>
-      <span class="badge badge-green">Terraform</span>
-      <span class="badge badge-green">AWS</span>
-      <span class="badge badge-green">Azure</span>
-      <span class="badge badge-green">SageMaker</span>
-      <span class="badge badge-green">Azure ML</span>
-      <span class="badge badge-green">Mendix Cloud</span>
-      <span class="badge badge-green">Ansible</span>
-      <span class="badge badge-blue">MLflow</span>
-      <span class="badge badge-blue">Databricks</span>
-      <span class="badge badge-blue">Airflow</span>
-      <span class="badge badge-blue">Parashift AI</span>
-      <span class="badge badge-blue">Kafka</span>
-      <span class="badge badge-blue">Embedded MLOps</span>
-      <span class="badge badge-blue">PyTorch</span>
-      <span class="badge badge-blue">TensorFlow</span>
-      <span class="badge badge-blue">scikit-learn</span>
-      <span class="badge badge-blue">FastAPI</span>
-      <span class="badge badge-blue">OpenCV</span>
-      <span class="badge badge-blue">PySpark</span>
-      <span class="badge badge-blue">Kedro</span>
-      <span class="badge badge-blue">OPC UA</span>
-      <span class="badge badge-blue">MQTT</span>
-      <span class="badge badge-blue">InfluxDB</span>
-      <span class="badge badge-blue">TensorRT</span>
-      <span class="badge badge-amber">DevSecOps</span>
-      <span class="badge badge-amber">MLSecOps</span>
-      <span class="badge badge-amber">CKA</span>
-      <span class="badge badge-amber">SonarQube</span>
-      <span class="badge badge-amber">Trivy</span>
-      <span class="badge badge-amber">Checkov</span>
-      <span class="badge badge-amber">RDF / SPARQL / SHACL</span>
-      <span class="badge badge-muted">Python</span>
-      <span class="badge badge-muted">R</span>
-      <span class="badge badge-muted">Bash</span>
-      <span class="badge badge-muted">SQL</span>
-      <span class="badge badge-muted">C++</span>
-      <span class="badge badge-muted">Helm</span>
-      <span class="badge badge-muted">Argo CD</span>
-      <span class="badge badge-muted">Prometheus</span>
-      <span class="badge badge-muted">Grafana</span>
-      <span class="badge badge-muted">Docker</span>
-      <span class="badge badge-muted">GitLab CI</span>
-      <span class="badge badge-muted">Jenkins</span>
-      <span class="badge badge-muted">GitHub Actions</span>
-      <span class="badge badge-muted">ONNX</span>
-      <span class="badge badge-muted">Spark</span>
-      <span class="badge badge-muted">PostgreSQL</span>
-      <span class="badge badge-muted">Nvidia Jetson</span>
-      <span class="badge badge-muted">Raspberry Pi 5</span>
+<div class="hero">
+  <div class="hero-inner">
+    <div class="avatar">FN</div>
+    <div class="hero-content">
+      <div class="hero-tag">DevOps · MLOps · DataOps · DevSecOps</div>
+      <h1 class="hero-name">Fernandez <span>Nntamo</span></h1>
+      <p class="hero-role">Cloud Infrastructure Engineer · Security-by-Design · Industrial Data Science</p>
+      <p class="hero-desc">
+        Ich konzipiere, implementiere und betreibe Cloud-Infrastrukturen, CI/CD-Pipelines 
+        und Data Services auf Kubernetes — mit Fokus auf DevSecOps, Zero-Trust-Architekturen, 
+        MLOps, ML(Sec)Ops und (Industrial) Data Science.
+      </p>
+      <div class="hero-links">
+        <a href="https://github.com/nntamo" target="_blank" class="social-btn">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+      </div>
     </div>
   </div>
+</div>
 
-  <!-- PROJEKTE -->
-  <section id="projekte">
-    <div class="section-label">// Projekte</div>
-    <h2>Ausgewählte Arbeiten</h2>
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">4<sup>+</sup></div>
+      <div class="stat-label">Projekte</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3<sup>+</sup></div>
+      <div class="stat-label">Cloud-Plattformen</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">50<sup>+</sup></div>
+      <div class="stat-label">Technologien</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4<sup>+</sup></div>
+      <div class="stat-label">Zertifizierungen</div>
+    </div>
+  </div>
+</div>
 
-    <div class="projects-grid">
+<div class="container">
 
-      <!-- Project DevOps -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-title">Project-DevOps — AWS Infrastructure</div>
-          <span class="project-type">DevOps · Cloud</span>
-        </div>
-        <p class="project-desc">
-          Aufbau einer produktionsreifen DevOps-Infrastruktur auf AWS mit EKS, Terraform, 
-          Kustomize und vollständigem Monitoring-Stack. Von der Infrastruktur als Code bis 
-          zur automatisierten CI/CD-Pipeline — kein manuelles Deployment mehr.
-        </p>
-        <ul class="project-highlights">
-          <li>VPC, EKS-Cluster, RDS Postgres & Storage vollständig mit Terraform provisioniert</li>
-          <li>Kubernetes-Deployments via Kustomize (Frontend React/Nginx + Backend Node.js)</li>
-          <li>Prometheus + Grafana Monitoring-Stack mit Alert-Regeln</li>
-          <li>CI/CD-Pipeline (GitHub Actions) — Build, Push zu ECR, Deploy auf EKS</li>
-          <li>DevSecOps: AWS IAM, SonarQube, Secrets-Management, RBAC & Network Policies</li>
-          <li>HPA Autoscaling, High-Availability-Konzepte, Chaos-Testing</li>
-        </ul>
-        <div class="project-footer">
-          <div class="tech-tags">
-            <span class="tech-tag">AWS EKS</span>
-            <span class="tech-tag">Terraform</span>
-            <span class="tech-tag">Kustomize</span>
-            <span class="tech-tag">Helm</span>
-            <span class="tech-tag">Prometheus</span>
-            <span class="tech-tag">Grafana</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">GitHub Actions</span>
-            <span class="tech-tag">SonarQube</span>
-          </div>
-          <a href="https://github.com/nntamo/Project-DevOps" target="_blank" class="project-link">
-            GitHub ansehen →
-          </a>
+  <section class="section" id="skills">
+    <div class="section-header">
+      <div class="section-icon">⚙️</div>
+      <h2 class="section-title">Kompetenzen</h2>
+      <a href="#skills" class="section-anchor">#skills</a>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">☁ Cloud & Infrastruktur</div>
+        <div class="skill-tags">
+          <span class="skill-tag cyan">AWS EKS</span>
+          <span class="skill-tag cyan">Azure</span>
+          <span class="skill-tag cyan">Terraform</span>
+          <span class="skill-tag cyan">Ansible</span>
+          <span class="skill-tag cyan">SageMaker</span>
+          <span class="skill-tag cyan">Azure ML</span>
+          <span class="skill-tag cyan">Mendix Cloud</span>
+          <span class="skill-tag cyan">Kubernetes</span>
+          <span class="skill-tag cyan">Helm</span>
+          <span class="skill-tag cyan">Argo CD</span>
         </div>
       </div>
-
-      <!-- Jenkins CI/CD Pipeline — NOUVEAU -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-title">Jenkins CI/CD — FastAPI Microservices auf Kubernetes</div>
-          <span class="project-type">CI/CD · DevSecOps</span>
-        </div>
-        <p class="project-desc">
-          Production-grade CI/CD-Pipeline für FastAPI-Microservices über 4 Umgebungen (dev, qa, staging, prod) 
-          via Jenkins, Docker Hub und Kubernetes — mit automatischer Promotion, manuellen Freigaben, 
-          Security-Scanning und HTTPS-Enforcement.
-        </p>
-        <ul class="project-highlights">
-          <li>13 Pipeline-Stages im Jenkinsfile — automatischer Trigger via GitHub Webhook bei jedem Push</li>
-          <li>2 FastAPI-Dienste (movie-service + cast-service) hinter NGINX-Reverse-Proxy mit TLS 1.2/1.3 & HSTS</li>
-          <li>4 Kubernetes-Namespaces (dev/qa/staging/prod) mit Rolling Updates, 3 Replicas, HPA</li>
-          <li>Manuelle Freigaben + automatische Git-Merges zwischen Umgebungen (dev->qa->staging->prod)</li>
-          <li>Security: Pods laufen ohne Root-Rechte, Secrets nur zur Laufzeit injiziert (nie im Git), NetworkPolicy</li>
-          <li>Ressourcen-Limits pro Pod, StatefulSets für PostgreSQL 15, PVC pro Namespace</li>
-        </ul>
-        <div class="project-footer">
-          <div class="tech-tags">
-            <span class="tech-tag">Jenkins</span>
-            <span class="tech-tag">FastAPI</span>
-            <span class="tech-tag">Kubernetes</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Helm</span>
-            <span class="tech-tag">NGINX</span>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">Docker Hub</span>
-            <span class="tech-tag">Python</span>
-          </div>
-          <a href="https://github.com/nntamo/jenskin-pipeline-cicd" target="_blank" class="project-link">
-            GitHub ansehen →
-          </a>
+      <div class="skill-group">
+        <div class="skill-group-title">🔄 CI/CD & DevSecOps</div>
+        <div class="skill-tags">
+          <span class="skill-tag amber">Jenkins</span>
+          <span class="skill-tag amber">GitHub Actions</span>
+          <span class="skill-tag amber">GitLab CI</span>
+          <span class="skill-tag amber">SonarQube</span>
+          <span class="skill-tag amber">Trivy</span>
+          <span class="skill-tag amber">Checkov</span>
+          <span class="skill-tag amber">Docker</span>
+          <span class="skill-tag amber">Kustomize</span>
         </div>
       </div>
-
-      <!-- Data Science -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-title">Data-Science — ML & Analytics</div>
-          <span class="project-type" style="background:rgba(59,130,246,0.1);color:var(--accent2);border-color:rgba(59,130,246,0.2)">MLOps · Data</span>
-        </div>
-        <p class="project-desc">
-          End-to-End Data-Science- und MLOps-Projekte mit Fokus auf Machine-Learning-Engineering, 
-          Modellentwicklung und datengetriebene Lösungen. Praktische Umsetzung von 
-          ML-Pipelines in produktionsnahen Umgebungen.
-        </p>
-        <ul class="project-highlights">
-          <li>Machine-Learning-Modelle: Training, Evaluation und Deployment</li>
-          <li>Computer Vision mit CNN, YOLO — OpenCV, TensorFlow, PyTorch</li>
-          <li>Datenanalyse, Feature Engineering und Pipeline-Automatisierung</li>
-          <li>MLSecOps-Praktiken: sichere Modell-Pipelines und Compliance</li>
-          <li>Integration mit Azure Databricks und semantischen Wissensgraphen (SHACL/RDF)</li>
-        </ul>
-        <div class="project-footer">
-          <div class="tech-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">TensorFlow</span>
-            <span class="tech-tag">PyTorch</span>
-            <span class="tech-tag">MLflow</span>
-            <span class="tech-tag">Airflow</span>
-            <span class="tech-tag">Databricks</span>
-            <span class="tech-tag">OpenCV</span>
-            <span class="tech-tag">YOLO</span>
-          </div>
-          <a href="https://github.com/nntamo/Data-Science" target="_blank" class="project-link">
-            GitHub ansehen →
-          </a>
+      <div class="skill-group">
+        <div class="skill-group-title">🤖 MLOps & Data Science</div>
+        <div class="skill-tags">
+          <span class="skill-tag violet">MLflow</span>
+          <span class="skill-tag violet">Databricks</span>
+          <span class="skill-tag violet">Airflow</span>
+          <span class="skill-tag violet">PyTorch</span>
+          <span class="skill-tag violet">TensorFlow</span>
+          <span class="skill-tag violet">scikit-learn</span>
+          <span class="skill-tag violet">OpenCV</span>
+          <span class="skill-tag violet">YOLO</span>
+          <span class="skill-tag violet">TensorRT</span>
+          <span class="skill-tag violet">ONNX</span>
+          <span class="skill-tag violet">Kedro</span>
         </div>
       </div>
-
-      <!-- Cloud Data Engineering -->
-      <div class="project-card">
-        <div class="project-header">
-          <div class="project-title">Cloud-Data-Engineering — Daten & Analytics</div>
-          <span class="project-type" style="background:rgba(245,158,11,0.1);color:var(--accent3);border-color:rgba(245,158,11,0.2)">Data Engineering · Cloud</span>
-        </div>
-        <p class="project-desc">
-          Sammlung von Data-Engineering- und Analytics-Projekten mit Fokus auf moderne Datenarchitekturen, 
-          Cloud-Datenpipelines und Open-Source-Plattformen — von der Datenerfassung bis zur Bereitstellung.
-        </p>
-        <ul class="project-highlights">
-          <li>Moderne Datenarchitektur — End-to-End-Design und Implementierung</li>
-          <li>Data Engineering auf Open-Source-Plattformen</li>
-          <li>Migration von On-Premises zu Azure SQL DB</li>
-          <li>Azure Data Lake Architektur (Bronze–Silver–Gold Medallion)</li>
-          <li>DevOps-Integration für Datenplattformen</li>
-        </ul>
-        <div class="project-footer">
-          <div class="tech-tags">
-            <span class="tech-tag">Python</span>
-            <span class="tech-tag">Azure</span>
-            <span class="tech-tag">Azure SQL</span>
-            <span class="tech-tag">Data Lake</span>
-            <span class="tech-tag">Docker</span>
-            <span class="tech-tag">Airflow</span>
-            <span class="tech-tag">SQL</span>
-          </div>
-          <a href="https://github.com/nntamo/Cloud-Data-Engineering" target="_blank" class="project-link">
-            GitHub ansehen →
-          </a>
+      <div class="skill-group">
+        <div class="skill-group-title">📊 Data Engineering</div>
+        <div class="skill-tags">
+          <span class="skill-tag emerald">Kafka</span>
+          <span class="skill-tag emerald">Spark / PySpark</span>
+          <span class="skill-tag emerald">InfluxDB</span>
+          <span class="skill-tag emerald">PostgreSQL</span>
+          <span class="skill-tag emerald">OPC UA</span>
+          <span class="skill-tag emerald">MQTT</span>
+          <span class="skill-tag emerald">RDF / SPARQL</span>
+          <span class="skill-tag emerald">Azure Data Lake</span>
         </div>
       </div>
-
+      <div class="skill-group">
+        <div class="skill-group-title">🔍 Monitoring & Observability</div>
+        <div class="skill-tags">
+          <span class="skill-tag cyan">Prometheus</span>
+          <span class="skill-tag cyan">Grafana</span>
+          <span class="skill-tag cyan">FastAPI</span>
+          <span class="skill-tag cyan">Parashift AI</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">💻 Sprachen & Edge</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">R</span>
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">Nvidia Jetson</span>
+          <span class="skill-tag">Raspberry Pi 5</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- ZERTIFIKATE -->
-  <section id="zertifikate">
-    <div class="section-label">// Zertifikate</div>
-    <h2>Zertifizierungen</h2>
+  <hr class="section-divider" />
+
+  <section class="section" id="certifications">
+    <div class="section-header">
+      <div class="section-icon">🏅</div>
+      <h2 class="section-title">Zertifizierungen</h2>
+      <a href="#certifications" class="section-anchor">#certifications</a>
+    </div>
     <div class="certs-grid">
       <div class="cert-card">
+        <div class="cert-badge">👁</div>
         <div>
           <div class="cert-name">Master Computer Vision (CNN, YOLO, RNN)</div>
           <div class="cert-issuer">OpenCV · TensorFlow · PyTorch</div>
+          <span class="cert-status">✓ Obtenu</span>
         </div>
       </div>
       <div class="cert-card">
+        <div class="cert-badge">🔒</div>
         <div>
           <div class="cert-name">DevOps Engineer & DevSecOps</div>
           <div class="cert-issuer">Azure DevOps</div>
+          <span class="cert-status">✓ Obtenu</span>
         </div>
       </div>
       <div class="cert-card">
+        <div class="cert-badge">🧠</div>
         <div>
           <div class="cert-name">Applied AI Lab — Deep Learning for Computer Vision</div>
           <div class="cert-issuer">WorldQuant University</div>
+          <span class="cert-status">✓ Obtenu</span>
         </div>
       </div>
       <div class="cert-card">
+        <div class="cert-badge">🎓</div>
         <div>
           <div class="cert-name">DevOps Engineer</div>
           <div class="cert-issuer">Université Paris Sorbonne</div>
+          <span class="cert-status">✓ Obtenu</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- KONTAKT -->
-  <section id="kontakt">
-    <div class="section-label">// Kontakt</div>
-    <h2>Zusammenarbeiten</h2>
-    <div class="contact-block">
-      <div class="contact-text">
-        <h3>Kontakt</h3>
-        <p>DevOps · MLOps · Cloud Infrastructure · DataOps</p>
+  <hr class="section-divider" />
+
+  <section class="section" id="projects">
+    <div class="section-header">
+      <div class="section-icon">📁</div>
+      <h2 class="section-title">Projekte</h2>
+      <a href="#projects" class="section-anchor">#projects</a>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterProjects('all', this)">Alle</button>
+      <button class="filter-btn" onclick="filterProjects('devops', this)">DevOps · Cloud</button>
+      <button class="filter-btn" onclick="filterProjects('cicd', this)">CI/CD</button>
+      <button class="filter-btn" onclick="filterProjects('mlops', this)">MLOps · Data Science</button>
+      <button class="filter-btn" onclick="filterProjects('data', this)">Data Engineering</button>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card" data-category="devops">
+        <div class="project-accent devops"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title">Project-DevOps — AWS Infrastructure</div>
+            <span class="project-badge badge-devops">DevOps · Cloud</span>
+          </div>
+          <p class="project-desc">
+            Aufbau einer produktionsreifen DevOps-Infrastruktur auf AWS mit EKS, Terraform, 
+            Kustomize und vollständigem Monitoring-Stack — kein manuelles Deployment mehr.
+          </p>
+          <ul class="project-highlights">
+            <li>VPC, EKS-Cluster, RDS Postgres & Storage vollständig mit Terraform provisioniert</li>
+            <li>Kubernetes-Deployments via Kustomize (Frontend React/Nginx + Backend Node.js)</li>
+            <li>Prometheus + Grafana Monitoring-Stack mit Alert-Regeln</li>
+            <li>CI/CD-Pipeline (GitHub Actions) — Build, Push zu ECR, Deploy auf EKS</li>
+            <li>DevSecOps: AWS IAM, SonarQube, Secrets-Management, RBAC & Network Policies</li>
+            <li>HPA Autoscaling, High-Availability-Konzepte, Chaos-Testing</li>
+          </ul>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">AWS EKS</span>
+              <span class="tech-tag">Terraform</span>
+              <span class="tech-tag">Kustomize</span>
+              <span class="tech-tag">Helm</span>
+              <span class="tech-tag">Prometheus</span>
+              <span class="tech-tag">Grafana</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">GitHub Actions</span>
+              <span class="tech-tag">SonarQube</span>
+            </div>
+            <a href="https://github.com/nntamo/Project-DevOps" target="_blank" class="project-link">Repo →</a>
+          </div>
+        </div>
       </div>
-      <a href="https://github.com/nntamo" target="_blank" class="btn btn-primary">
-        → GitHub Profil
+
+      <div class="project-card" data-category="cicd">
+        <div class="project-accent cicd"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title">Jenkins CI/CD — FastAPI Microservices auf Kubernetes</div>
+            <span class="project-badge badge-cicd">CI/CD · DevSecOps</span>
+          </div>
+          <p class="project-desc">
+            Production-grade CI/CD-Pipeline für FastAPI-Microservices über 4 Umgebungen (dev, qa, staging, prod) 
+            via Jenkins und Kubernetes — mit manuellen Freigaben, Security-Scanning und erzwungenem HTTPS.
+          </p>
+          <ul class="project-highlights">
+            <li>13 Pipeline-Stages im Jenkinsfile — automatischer Trigger via GitHub Webhook</li>
+            <li>2 FastAPI-Dienste hinter NGINX-Reverse-Proxy mit TLS 1.2/1.3 & HSTS</li>
+            <li>4 Kubernetes-Namespaces (dev/qa/staging/prod) mit Rolling Updates, 3 Replicas</li>
+            <li>Manuelle Freigaben + automatische Git-Merges zwischen Umgebungen</li>
+            <li>Pods ohne Root-Rechte, Secrets nur zur Laufzeit injiziert, NetworkPolicy</li>
+          </ul>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Jenkins</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Kubernetes</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Helm</span>
+              <span class="tech-tag">NGINX</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">Docker Hub</span>
+              <span class="tech-tag">Python</span>
+            </div>
+            <a href="https://github.com/nntamo/jenskin-pipeline-cicd" target="_blank" class="project-link">Repo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="mlops">
+        <div class="project-accent mlops"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title">Data-Science — ML & Analytics</div>
+            <span class="project-badge badge-mlops">MLOps · Data Science</span>
+          </div>
+          <p class="project-desc">
+            End-to-End Data-Science- und MLOps-Projekte mit Fokus auf Machine-Learning-Engineering 
+            und datengetriebene Lösungen in produktionsnahen Umgebungen.
+          </p>
+          <ul class="project-highlights">
+            <li>Machine-Learning-Modelle: Training, Evaluation und Deployment</li>
+            <li>Computer Vision mit CNN, YOLO — OpenCV, TensorFlow, PyTorch</li>
+            <li>Datenanalyse, Feature Engineering und Pipeline-Automatisierung</li>
+            <li>MLSecOps-Praktiken: sichere Modell-Pipelines und Compliance</li>
+            <li>Integration mit Azure Databricks und semantischen Wissensgraphen (SHACL/RDF)</li>
+          </ul>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">PyTorch</span>
+              <span class="tech-tag">MLflow</span>
+              <span class="tech-tag">Airflow</span>
+              <span class="tech-tag">Databricks</span>
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">YOLO</span>
+            </div>
+            <a href="https://github.com/nntamo/Data-Science" target="_blank" class="project-link">Repo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="data">
+        <div class="project-accent data"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title">Cloud-Data-Engineering — Daten & Analytics</div>
+            <span class="project-badge badge-data">Data Engineering · Cloud</span>
+          </div>
+          <p class="project-desc">
+            Data-Engineering- und Analytics-Projekte mit Fokus auf moderne Datenarchitekturen 
+            und Cloud-Datenpipelines — von der Datenerfassung bis zur Bereitstellung.
+          </p>
+          <ul class="project-highlights">
+            <li>Moderne Datenarchitektur — End-to-End-Design und Implementierung</li>
+            <li>Data Engineering auf Open-Source-Plattformen</li>
+            <li>Migration von On-Premises zu Azure SQL DB</li>
+            <li>Azure Data Lake Architektur (Bronze–Silver–Gold Medallion)</li>
+            <li>DevOps-Integration für Datenplattformen</li>
+          </ul>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">Azure SQL</span>
+              <span class="tech-tag">Data Lake</span>
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">Airflow</span>
+              <span class="tech-tag">SQL</span>
+            </div>
+            <a href="https://github.com/nntamo/Cloud-Data-Engineering" target="_blank" class="project-link">Repo →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section class="section" id="contact">
+    <div class="section-header">
+      <div class="section-icon">📬</div>
+      <h2 class="section-title">Kontakt</h2>
+      <a href="#contact" class="section-anchor">#contact</a>
+    </div>
+    <div class="contact-card">
+      <div>
+        <h3>Zusammenarbeiten</h3>
+        <p>DevOps · MLOps · Cloud Infrastructure · DataOps · DevSecOps</p>
+      </div>
+      <a href="https://github.com/nntamo" target="_blank" class="btn-primary">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub Profil
       </a>
     </div>
   </section>
@@ -754,6 +838,20 @@
 <footer>
   <p>© 2026 Fernandez Nntamo — <span>DevOps & MLOps Engineer</span> — <span>"Build it right, automate it well, secure it always."</span></p>
 </footer>
+
+<script>
+  function filterProjects(category, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.project-card').forEach(card => {
+      if (category === 'all' || card.dataset.category === category) {
+        card.classList.remove('hidden');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
