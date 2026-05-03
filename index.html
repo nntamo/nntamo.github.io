@@ -3,452 +3,185 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fernandez Nntamo — DevOps & MLOps Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <title>Fernandez Nntamo — MLOps Engineer & Architect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:        #0a0c10;
-      --surface:   #111318;
-      --surface2:  #181c23;
-      --surface3:  #1e2330;
-      --border:    #1f2535;
-      --border2:   #2a3045;
-
-      /* CYAN ÉLECTRIQUE — couleur principale */
-      --cyan:      #00e5ff;
-      --cyan-dim:  #00b8cc;
-      --cyan-glow: rgba(0,229,255,0.12);
-      --cyan-bg:   rgba(0,229,255,0.06);
-
-      /* Accents secondaires */
-      --violet:    #a855f7;
-      --violet-bg: rgba(168,85,247,0.08);
-      --emerald:   #10d97e;
-      --emerald-bg:rgba(16,217,126,0.08);
-      --amber:     #fbbf24;
-      --amber-bg:  rgba(251,191,36,0.08);
-      --coral:     #ff6b6b;
-      --coral-bg:  rgba(255,107,107,0.08);
-
-      --text:      #e8edf5;
-      --muted:     #7a8499;
-      --muted2:    #404859;
-
-      --mono: 'JetBrains Mono', monospace;
-      --sans: 'Inter', sans-serif;
+      --bg:#07090e;--surface:#0c1018;--surface2:#141923;--border:#1c2535;--border2:#253045;
+      --cyan:#00e5ff;--cyan-dim:#00b8cc;--cyan-glow:rgba(0,229,255,0.14);--cyan-bg:rgba(0,229,255,0.07);
+      --violet:#a78bfa;--violet-bg:rgba(167,139,250,0.08);
+      --emerald:#34d399;--emerald-bg:rgba(52,211,153,0.08);
+      --amber:#fbbf24;--amber-bg:rgba(251,191,36,0.08);
+      --rose:#fb7185;--rose-bg:rgba(251,113,133,0.08);
+      --text:#eef2f8;--muted:#6b7a94;--muted2:#38455a;
+      --mono:'JetBrains Mono',monospace;--display:'Syne',sans-serif;--sans:'Inter',sans-serif;--radius:10px;
     }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      min-height: 100vh;
-    }
-
-    /* subtle grid */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image:
-        linear-gradient(rgba(0,229,255,0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,229,255,0.02) 1px, transparent 1px);
-      background-size: 36px 36px;
-      pointer-events: none; z-index: 0;
-    }
-
-    /* NAV */
-    nav {
-      background: rgba(10,12,16,0.88);
-      border-bottom: 1px solid var(--border);
-      position: sticky; top: 0; z-index: 100;
-      backdrop-filter: blur(16px);
-    }
-
-    .nav-inner {
-      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-      height: 58px;
-    }
-
-    .logo {
-      font-family: var(--mono); font-size: 0.82rem; font-weight: 700;
-      color: var(--text); text-decoration: none;
-      display: flex; align-items: center; gap: 9px;
-    }
-
-    .logo-dot {
-      width: 8px; height: 8px; border-radius: 50%;
-      background: var(--cyan);
-      box-shadow: 0 0 8px var(--cyan);
-    }
-
-    .nav-links { display: flex; list-style: none; }
-
-    .nav-links a {
-      font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
-      color: var(--muted); text-decoration: none;
-      padding: 0 1rem; height: 58px;
-      display: flex; align-items: center;
-      border-bottom: 2px solid transparent;
-      letter-spacing: 0.05em; text-transform: uppercase;
-      transition: all 0.15s;
-    }
-
-    .nav-links a:hover { color: var(--cyan); border-bottom-color: var(--cyan); }
-
-    /* HERO */
-    .hero {
-      background: var(--surface);
-      border-bottom: 1px solid var(--border);
-      padding: 4rem 0;
-      position: relative; overflow: hidden;
-      z-index: 1;
-    }
-
-    /* cyan glow top-right */
-    .hero::after {
-      content: '';
-      position: absolute; top: -120px; right: -120px;
-      width: 480px; height: 480px;
-      background: radial-gradient(circle, rgba(0,229,255,0.07) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      max-width: 1100px; margin: 0 auto; padding: 0 2rem;
-      display: flex; align-items: center; gap: 3rem;
-      position: relative; z-index: 1;
-    }
-
-    .avatar {
-      width: 112px; height: 112px; border-radius: 50%;
-      background: linear-gradient(135deg, #00e5ff 0%, #a855f7 100%);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--mono); font-size: 1.8rem; font-weight: 700;
-      color: #0a0c10; flex-shrink: 0;
-      border: 2px solid rgba(0,229,255,0.3);
-      box-shadow: 0 0 24px rgba(0,229,255,0.2);
-    }
-
-    .hero-content { flex: 1; }
-
-    .hero-tag {
-      font-family: var(--mono); font-size: 0.68rem;
-      color: var(--cyan); letter-spacing: 0.2em; text-transform: uppercase;
-      margin-bottom: 0.6rem;
-      display: flex; align-items: center; gap: 0.6rem;
-    }
-
-    .hero-tag::before { content: ''; width: 20px; height: 1px; background: var(--cyan); }
-
-    .hero-name {
-      font-size: 2.1rem; font-weight: 700;
-      letter-spacing: -0.025em; margin-bottom: 0.3rem;
-      color: var(--text);
-    }
-
-    .hero-name span { color: var(--cyan); }
-
-    .hero-role { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.2rem; }
-
-    .hero-desc {
-      font-size: 0.91rem; color: var(--muted);
-      line-height: 1.78; max-width: 580px; margin-bottom: 1.5rem;
-    }
-
-    .hero-links { display: flex; gap: 0.6rem; flex-wrap: wrap; }
-
-    .social-btn {
-      font-family: var(--mono); font-size: 0.72rem; font-weight: 500;
-      padding: 0.45rem 1rem; border-radius: 6px;
-      text-decoration: none;
-      border: 1px solid var(--border2);
-      color: var(--muted); background: var(--surface2);
-      transition: all 0.2s;
-      display: flex; align-items: center; gap: 0.45rem;
-    }
-
-    .social-btn:hover {
-      border-color: var(--cyan); color: var(--cyan);
-      background: var(--cyan-bg);
-      box-shadow: 0 0 12px var(--cyan-glow);
-    }
-
-    /* STATS */
-
-
-    /* LAYOUT */
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
-
-    .section { padding: 3.5rem 0; }
-
-    .section-header {
-      display: flex; align-items: center; gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .section-icon {
-      width: 30px; height: 30px; border-radius: 7px;
-      background: var(--cyan-bg);
-      border: 1px solid rgba(0,229,255,0.2);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--mono); font-size: 0.7rem; font-weight: 700;
-      color: var(--cyan);
-    }
-
-    .section-title { font-size: 1.1rem; font-weight: 600; color: var(--text); }
-
-    .section-anchor {
-      font-family: var(--mono); font-size: 0.68rem;
-      color: var(--muted2); margin-left: auto; text-decoration: none;
-    }
-
-    .section-anchor:hover { color: var(--cyan); }
-
-    /* SKILLS */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1rem;
-    }
-
-    .skill-group {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.25rem 1.5rem;
-      transition: border-color 0.2s;
-    }
-
-    .skill-group:hover { border-color: var(--border2); }
-
-    .skill-group-title {
-      font-size: 0.72rem; font-weight: 600; color: var(--muted);
-      text-transform: uppercase; letter-spacing: 0.1em;
-      margin-bottom: 0.9rem;
-    }
-
-    .skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-    .skill-tag {
-      font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
-      padding: 0.22rem 0.6rem; border-radius: 4px;
-      border: 1px solid var(--border2); color: var(--muted);
-      background: var(--surface2);
-    }
-
-    .skill-tag.cyan  { background: var(--cyan-bg);    color: var(--cyan);    border-color: rgba(0,229,255,0.2); }
-    .skill-tag.violet{ background: var(--violet-bg);  color: var(--violet);  border-color: rgba(168,85,247,0.2); }
-    .skill-tag.emerald{background: var(--emerald-bg); color: var(--emerald); border-color: rgba(16,217,126,0.2); }
-    .skill-tag.amber { background: var(--amber-bg);   color: var(--amber);   border-color: rgba(251,191,36,0.2); }
-
-    /* CERTS */
-    .certs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1rem;
-    }
-
-    .cert-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 10px; padding: 1.25rem 1.5rem;
-      display: flex; align-items: flex-start; gap: 1rem;
-      transition: border-color 0.2s, box-shadow 0.2s;
-    }
-
-    .cert-card:hover {
-      border-color: rgba(0,229,255,0.35);
-      box-shadow: 0 0 20px var(--cyan-glow);
-    }
-
-    .cert-badge {
-      width: 42px; height: 38px; border-radius: 8px;
-      background: var(--cyan-bg);
-      border: 1px solid rgba(0,229,255,0.2);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--mono); font-size: 0.6rem; font-weight: 700;
-      color: var(--cyan); flex-shrink: 0; letter-spacing: 0.05em;
-    }
-
-    .cert-name { font-size: 0.85rem; font-weight: 600; line-height: 1.4; margin-bottom: 0.2rem; color: var(--text); }
-    .cert-issuer { font-family: var(--mono); font-size: 0.68rem; color: var(--muted); }
-    .cert-status {
-      font-family: var(--mono); font-size: 0.66rem; font-weight: 600;
-      padding: 0.15rem 0.45rem; border-radius: 4px;
-      background: var(--emerald-bg); color: var(--emerald);
-      border: 1px solid rgba(16,217,126,0.2);
-      display: inline-block; margin-top: 0.4rem;
-    }
-
-    /* PROJECTS */
-    .filter-bar { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
-
-    .filter-btn {
-      font-family: var(--mono); font-size: 0.7rem; font-weight: 500;
-      padding: 0.35rem 0.9rem; border-radius: 20px;
-      border: 1px solid var(--border2);
-      color: var(--muted); background: var(--surface);
-      cursor: pointer; transition: all 0.15s; letter-spacing: 0.03em;
-    }
-
-    .filter-btn:hover { border-color: var(--cyan); color: var(--cyan); background: var(--cyan-bg); }
-    .filter-btn.active { background: var(--cyan); color: #0a0c10; border-color: var(--cyan); font-weight: 700; }
-
-    .projects-grid { display: grid; gap: 1.25rem; }
-
-    .project-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px; overflow: hidden;
-      display: flex;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    }
-
-    .project-card:hover {
-      border-color: rgba(0,229,255,0.3);
-      box-shadow: 0 4px 24px rgba(0,229,255,0.08);
-      transform: translateY(-2px);
-    }
-
-    .project-card.hidden { display: none; }
-
-    .project-accent { width: 3px; flex-shrink: 0; }
-    .project-accent.devops  { background: var(--cyan); }
-    .project-accent.cicd    { background: var(--amber); }
-    .project-accent.mlops   { background: var(--violet); }
-    .project-accent.data    { background: var(--emerald); }
-
-    .project-body { padding: 1.75rem 2rem; flex: 1; }
-
-    .project-header {
-      display: flex; justify-content: space-between;
-      align-items: flex-start; gap: 1rem; margin-bottom: 0.75rem;
-    }
-
-    .project-title { font-size: 0.98rem; font-weight: 600; color: var(--text); }
-
-    .project-badge {
-      font-family: var(--mono); font-size: 0.62rem; font-weight: 600;
-      padding: 0.2rem 0.55rem; border-radius: 4px;
-      white-space: nowrap; flex-shrink: 0; letter-spacing: 0.05em;
-    }
-
-    .badge-devops  { background: var(--cyan-bg);    color: var(--cyan);    border: 1px solid rgba(0,229,255,0.2); }
-    .badge-cicd    { background: var(--amber-bg);   color: var(--amber);   border: 1px solid rgba(251,191,36,0.2); }
-    .badge-mlops   { background: var(--violet-bg);  color: var(--violet);  border: 1px solid rgba(168,85,247,0.2); }
-    .badge-data    { background: var(--emerald-bg); color: var(--emerald); border: 1px solid rgba(16,217,126,0.2); }
-
-    .project-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.72; margin-bottom: 1.1rem; }
-
-    .project-highlights { list-style: none; margin-bottom: 1.25rem; display: grid; gap: 0.35rem; }
-
-    .project-highlights li {
-      font-size: 0.82rem; color: var(--muted);
-      display: flex; align-items: baseline; gap: 0.5rem; line-height: 1.55;
-    }
-
-    .project-highlights li::before {
-      content: '›'; color: var(--cyan);
-      font-family: var(--mono); font-size: 0.85rem; flex-shrink: 0;
-    }
-
-    .project-footer {
-      display: flex; justify-content: space-between;
-      align-items: center; flex-wrap: wrap;
-      gap: 0.75rem; padding-top: 1.1rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .tech-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-
-    .tech-tag {
-      font-family: var(--mono); font-size: 0.65rem;
-      padding: 0.18rem 0.5rem;
-      background: var(--surface2); color: var(--muted);
-      border-radius: 4px; border: 1px solid var(--border);
-    }
-
-    .project-link {
-      font-family: var(--mono); font-size: 0.7rem; font-weight: 600;
-      color: var(--cyan); text-decoration: none;
-      display: flex; align-items: center; gap: 0.35rem;
-      padding: 0.38rem 0.85rem;
-      border: 1px solid rgba(0,229,255,0.35); border-radius: 6px;
-      transition: all 0.18s; white-space: nowrap; letter-spacing: 0.05em;
-    }
-
-    .project-link:hover {
-      background: var(--cyan); color: #0a0c10;
-      box-shadow: 0 0 14px rgba(0,229,255,0.3);
-    }
-
-    /* CONTACT */
-    .contact-card {
-      background: var(--surface); border: 1px solid var(--border);
-      border-radius: 12px; padding: 2.5rem;
-      display: flex; justify-content: space-between;
-      align-items: center; gap: 2rem; flex-wrap: wrap;
-      position: relative; overflow: hidden;
-    }
-
-    .contact-card::before {
-      content: '';
-      position: absolute; bottom: -60px; right: -60px;
-      width: 220px; height: 220px;
-      background: radial-gradient(circle, rgba(0,229,255,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .contact-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.4rem; color: var(--text); }
-    .contact-card p { font-size: 0.87rem; color: var(--muted); }
-
-    .btn-primary {
-      font-family: var(--mono); font-size: 0.78rem; font-weight: 700;
-      padding: 0.7rem 1.5rem; border-radius: 8px;
-      background: var(--cyan); color: #0a0c10;
-      text-decoration: none;
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      transition: all 0.2s; border: none; letter-spacing: 0.05em;
-    }
-
-    .btn-primary:hover {
-      background: #33ecff;
-      box-shadow: 0 0 20px rgba(0,229,255,0.4);
-      transform: translateY(-1px);
-    }
-
-    .section-divider { border: none; border-top: 1px solid var(--border); }
-
-    /* FOOTER */
-    footer {
-      background: var(--surface); border-top: 1px solid var(--border);
-      padding: 1.5rem 0; text-align: center; position: relative; z-index: 1;
-    }
-
-    footer p { font-family: var(--mono); font-size: 0.7rem; color: var(--muted2); }
-    footer span { color: var(--cyan); }
-
-    @media (max-width: 640px) {
-      .hero-inner { flex-direction: column; text-align: center; }
-      .hero-links { justify-content: center; }
-      .hero-tag { justify-content: center; }
-      .stats-inner { flex-wrap: wrap; }
-      .stat-item { border-right: none; margin-right: 0; padding: 0.75rem 0; }
-      .nav-links { display: none; }
-    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;overflow-x:hidden}
+    body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,229,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.02) 1px,transparent 1px);background-size:42px 42px;pointer-events:none;z-index:0}
+
+    nav{background:rgba(7,9,14,0.9);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
+    .nav-inner{max-width:1140px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;height:56px}
+    .logo{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:9px}
+    .logo-pulse{width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan);animation:pulse 2.5s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 10px var(--cyan)}50%{opacity:.5;box-shadow:0 0 4px var(--cyan)}}
+    .nav-links{display:flex;list-style:none}
+    .nav-links a{font-family:var(--mono);font-size:.68rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0 .9rem;height:56px;display:flex;align-items:center;border-bottom:2px solid transparent;letter-spacing:.08em;text-transform:uppercase;transition:all .2s}
+    .nav-links a:hover{color:var(--cyan);border-bottom-color:var(--cyan)}
+
+    .hero{background:var(--surface);border-bottom:1px solid var(--border);padding:5rem 0 4rem;position:relative;overflow:hidden;z-index:1}
+    .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,229,255,0.06) 0%,transparent 65%);pointer-events:none}
+    .hero::after{content:'';position:absolute;bottom:-100px;left:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(167,139,250,0.05) 0%,transparent 65%);pointer-events:none}
+    .hero-inner{max-width:1140px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:auto 1fr;gap:3.5rem;align-items:center;position:relative;z-index:1}
+    .avatar-wrap{position:relative}
+    .avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,#00e5ff 0%,#a78bfa 55%,#34d399 100%);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:2rem;font-weight:800;color:#07090e;position:relative;z-index:1}
+    .avatar-ring{position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(0,229,255,0.3);animation:spin-slow 14s linear infinite}
+    .avatar-ring::before{content:'';position:absolute;top:-3px;left:50%;width:6px;height:6px;border-radius:50%;background:var(--cyan);transform:translateX(-50%);box-shadow:0 0 8px var(--cyan)}
+    @keyframes spin-slow{to{transform:rotate(360deg)}}
+
+    .hero-eyebrow{font-family:var(--mono);font-size:.66rem;color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
+    .hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--cyan)}
+    .hero-name{font-family:var(--display);font-size:2.7rem;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:.45rem}
+    .hero-name span{color:var(--cyan)}
+    .hero-title{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-bottom:.6rem;letter-spacing:.04em}
+    .hero-title strong{color:var(--violet);font-weight:500}
+
+    .hero-badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.4rem}
+    .hero-badge{font-family:var(--mono);font-size:.61rem;font-weight:600;padding:.22rem .7rem;border-radius:20px;letter-spacing:.06em;display:flex;align-items:center;gap:.4rem}
+    .badge-mlops{background:var(--violet-bg);color:var(--violet);border:1px solid rgba(167,139,250,0.3)}
+    .badge-devops{background:var(--cyan-bg);color:var(--cyan);border:1px solid rgba(0,229,255,0.3)}
+    .badge-ds{background:var(--emerald-bg);color:var(--emerald);border:1px solid rgba(52,211,153,0.3)}
+
+    .hero-desc{font-size:.94rem;color:var(--muted);line-height:1.88;max-width:620px;margin-bottom:1.6rem;border-left:2px solid var(--cyan);padding-left:1.25rem}
+    .hero-desc strong{color:var(--text);font-weight:600}
+    .hero-desc em{color:var(--cyan);font-style:normal;font-family:var(--mono);font-size:.85em}
+
+    .hero-kpi{display:flex;gap:2.2rem;margin-bottom:1.75rem;flex-wrap:wrap}
+    .kpi{display:flex;flex-direction:column;gap:.18rem}
+    .kpi-value{font-family:var(--display);font-size:1.6rem;font-weight:800;color:var(--cyan);line-height:1}
+    .kpi-label{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:.09em;text-transform:uppercase}
+
+    .hero-links{display:flex;gap:.6rem;flex-wrap:wrap}
+    .social-btn{font-family:var(--mono);font-size:.7rem;font-weight:500;padding:.45rem 1rem;border-radius:6px;text-decoration:none;border:1px solid var(--border2);color:var(--muted);background:var(--surface2);transition:all .2s;display:flex;align-items:center;gap:.45rem}
+    .social-btn:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-bg);box-shadow:0 0 16px var(--cyan-glow)}
+
+    /* VALUE STRIP */
+    .value-strip{background:var(--surface);border-bottom:1px solid var(--border);position:relative;z-index:1}
+    .value-inner{max-width:1140px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(3,1fr)}
+    .value-item{padding:2rem 1.75rem;border-right:1px solid var(--border);transition:background .2s}
+    .value-item:last-child{border-right:none}
+    .value-item:hover{background:var(--surface2)}
+    .value-icon{font-family:var(--mono);font-size:.63rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;display:flex;align-items:center;gap:.5rem}
+    .value-icon::before{content:'';width:6px;height:6px;border-radius:50%;flex-shrink:0}
+    .vi-mlops .value-icon{color:var(--violet)}.vi-mlops .value-icon::before{background:var(--violet);box-shadow:0 0 6px var(--violet)}
+    .vi-devops .value-icon{color:var(--cyan)}.vi-devops .value-icon::before{background:var(--cyan);box-shadow:0 0 6px var(--cyan)}
+    .vi-ds .value-icon{color:var(--emerald)}.vi-ds .value-icon::before{background:var(--emerald);box-shadow:0 0 6px var(--emerald)}
+    .value-title{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:.5rem}
+    .value-desc{font-size:.83rem;color:var(--muted);line-height:1.72}
+
+    .container{max-width:1140px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
+    .section{padding:3.5rem 0}
+    .section-header{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem}
+    .section-icon{width:30px;height:30px;border-radius:7px;background:var(--cyan-bg);border:1px solid rgba(0,229,255,0.2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.64rem;font-weight:700;color:var(--cyan)}
+    .section-title{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--text)}
+    .section-sub{font-size:.83rem;color:var(--muted);margin-top:.2rem}
+    .section-anchor{font-family:var(--mono);font-size:.66rem;color:var(--muted2);margin-left:auto;text-decoration:none}
+    .section-anchor:hover{color:var(--cyan)}
+
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1rem}
+    .skill-group{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;transition:border-color .2s,transform .2s}
+    .skill-group:hover{border-color:var(--border2);transform:translateY(-1px)}
+    .skill-group-title{font-family:var(--mono);font-size:.64rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.9rem}
+    .skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+    .skill-tag{font-family:var(--mono);font-size:.67rem;font-weight:500;padding:.22rem .6rem;border-radius:4px;border:1px solid var(--border2);color:var(--muted);background:var(--surface2);transition:all .15s}
+    .skill-tag:hover{border-color:var(--muted2);color:var(--text)}
+    .skill-tag.cyan{background:var(--cyan-bg);color:var(--cyan);border-color:rgba(0,229,255,0.22)}
+    .skill-tag.violet{background:var(--violet-bg);color:var(--violet);border-color:rgba(167,139,250,0.22)}
+    .skill-tag.emerald{background:var(--emerald-bg);color:var(--emerald);border-color:rgba(52,211,153,0.22)}
+    .skill-tag.amber{background:var(--amber-bg);color:var(--amber);border-color:rgba(251,191,36,0.22)}
+    .skill-tag.rose{background:var(--rose-bg);color:var(--rose);border-color:rgba(251,113,133,0.22)}
+
+    .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
+    .cert-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:border-color .2s,box-shadow .2s,transform .2s}
+    .cert-card:hover{border-color:rgba(0,229,255,0.35);box-shadow:0 0 24px var(--cyan-glow);transform:translateY(-2px)}
+    .cert-card.in-progress{border-color:rgba(251,191,36,0.2)}
+    .cert-card.in-progress:hover{border-color:rgba(251,191,36,0.5);box-shadow:0 0 24px rgba(251,191,36,0.1)}
+    .cert-badge{width:44px;height:40px;border-radius:8px;background:var(--cyan-bg);border:1px solid rgba(0,229,255,0.2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:.58rem;font-weight:700;color:var(--cyan);flex-shrink:0;letter-spacing:.05em}
+    .cert-badge.amber-b{background:var(--amber-bg);border-color:rgba(251,191,36,0.2);color:var(--amber)}
+    .cert-name{font-size:.84rem;font-weight:600;line-height:1.4;margin-bottom:.2rem;color:var(--text)}
+    .cert-issuer{font-family:var(--mono);font-size:.65rem;color:var(--muted)}
+    .cert-status{font-family:var(--mono);font-size:.63rem;font-weight:600;padding:.15rem .5rem;border-radius:4px;display:inline-block;margin-top:.5rem}
+    .s-done{background:var(--emerald-bg);color:var(--emerald);border:1px solid rgba(52,211,153,0.2)}
+    .s-progress{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(251,191,36,0.2);animation:blink 2s ease-in-out infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.55}}
+
+    .filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.75rem}
+    .filter-btn{font-family:var(--mono);font-size:.67rem;font-weight:500;padding:.35rem .9rem;border-radius:20px;border:1px solid var(--border2);color:var(--muted);background:var(--surface);cursor:pointer;transition:all .15s;letter-spacing:.04em}
+    .filter-btn:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-bg)}
+    .filter-btn.active{background:var(--cyan);color:#07090e;border-color:var(--cyan);font-weight:700}
+
+    .projects-grid{display:grid;gap:1.25rem}
+    .project-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;transition:border-color .2s,box-shadow .2s,transform .2s}
+    .project-card:hover{border-color:rgba(0,229,255,0.28);box-shadow:0 6px 32px rgba(0,229,255,0.07);transform:translateY(-2px)}
+    .project-card.hidden{display:none}
+    .project-accent{width:3px;flex-shrink:0}
+    .pa-devops{background:linear-gradient(180deg,var(--cyan),var(--cyan-dim))}
+    .pa-cicd{background:linear-gradient(180deg,var(--amber),#d97706)}
+    .pa-mlops{background:linear-gradient(180deg,var(--violet),#7c3aed)}
+    .pa-data{background:linear-gradient(180deg,var(--emerald),#059669)}
+    .pa-ds{background:linear-gradient(180deg,var(--rose),#e11d48)}
+    .project-body{padding:1.75rem 2rem;flex:1}
+    .project-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.75rem}
+    .project-title{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--text)}
+    .project-badge{font-family:var(--mono);font-size:.6rem;font-weight:600;padding:.2rem .55rem;border-radius:4px;white-space:nowrap;flex-shrink:0;letter-spacing:.06em}
+    .pb-devops{background:var(--cyan-bg);color:var(--cyan);border:1px solid rgba(0,229,255,0.2)}
+    .pb-cicd{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(251,191,36,0.2)}
+    .pb-mlops{background:var(--violet-bg);color:var(--violet);border:1px solid rgba(167,139,250,0.2)}
+    .pb-data{background:var(--emerald-bg);color:var(--emerald);border:1px solid rgba(52,211,153,0.2)}
+    .pb-ds{background:var(--rose-bg);color:var(--rose);border:1px solid rgba(251,113,133,0.2)}
+    .project-desc{font-size:.87rem;color:var(--muted);line-height:1.75;margin-bottom:1.1rem}
+    .project-highlights{list-style:none;margin-bottom:1.25rem;display:grid;gap:.35rem}
+    .project-highlights li{font-size:.82rem;color:var(--muted);display:flex;align-items:baseline;gap:.5rem;line-height:1.55}
+    .project-highlights li::before{content:'›';color:var(--cyan);font-family:var(--mono);font-size:.9rem;flex-shrink:0}
+    .project-footer{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;padding-top:1.1rem;border-top:1px solid var(--border)}
+    .tech-tags{display:flex;flex-wrap:wrap;gap:.35rem}
+    .tech-tag{font-family:var(--mono);font-size:.63rem;padding:.18rem .5rem;background:var(--surface2);color:var(--muted);border-radius:4px;border:1px solid var(--border)}
+    .project-link{font-family:var(--mono);font-size:.68rem;font-weight:600;color:var(--cyan);text-decoration:none;display:flex;align-items:center;gap:.35rem;padding:.38rem .85rem;border:1px solid rgba(0,229,255,0.35);border-radius:6px;transition:all .18s;white-space:nowrap;letter-spacing:.05em}
+    .project-link:hover{background:var(--cyan);color:#07090e;box-shadow:0 0 16px rgba(0,229,255,0.35)}
+
+    .contact-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;position:relative;overflow:hidden}
+    .contact-card::before{content:'';position:absolute;bottom:-80px;right:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(0,229,255,0.05) 0%,transparent 70%);pointer-events:none}
+    .contact-card h3{font-family:var(--display);font-size:1.3rem;font-weight:700;margin-bottom:.4rem;color:var(--text)}
+    .contact-card p{font-size:.87rem;color:var(--muted)}
+    .btn-primary{font-family:var(--mono);font-size:.76rem;font-weight:700;padding:.75rem 1.5rem;border-radius:8px;background:var(--cyan);color:#07090e;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;letter-spacing:.05em;white-space:nowrap}
+    .btn-primary:hover{background:#33ecff;box-shadow:0 0 24px rgba(0,229,255,0.45);transform:translateY(-1px)}
+
+    .section-divider{border:none;border-top:1px solid var(--border)}
+    footer{background:var(--surface);border-top:1px solid var(--border);padding:1.75rem 0;text-align:center;position:relative;z-index:1}
+    footer p{font-family:var(--mono);font-size:.68rem;color:var(--muted2);line-height:1.9}
+    footer span{color:var(--cyan)}
+
+    @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    .hero-eyebrow{animation:fadeUp .5s ease both}
+    .hero-name{animation:fadeUp .5s .08s ease both}
+    .hero-title{animation:fadeUp .5s .14s ease both}
+    .hero-badges{animation:fadeUp .5s .18s ease both}
+    .hero-desc{animation:fadeUp .5s .22s ease both}
+    .hero-kpi{animation:fadeUp .5s .28s ease both}
+    .hero-links{animation:fadeUp .5s .34s ease both}
+
+    @media(max-width:860px){.value-inner{grid-template-columns:1fr}.value-item{border-right:none;border-bottom:1px solid var(--border)}.value-item:last-child{border-bottom:none}}
+    @media(max-width:640px){.hero-inner{grid-template-columns:1fr;text-align:center}.avatar-wrap{margin:0 auto}.hero-eyebrow,.hero-badges,.hero-kpi,.hero-links{justify-content:center}.hero-desc{border-left:none;border-top:2px solid var(--cyan);padding-left:0;padding-top:1rem}.nav-links{display:none}}
   </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-inner">
-    <a href="#" class="logo">
-      <div class="logo-dot"></div>
-      nntamo.github.io
-    </a>
+    <a href="#" class="logo"><div class="logo-pulse"></div>nntamo.github.io</a>
     <ul class="nav-links">
+      <li><a href="#value">Profil</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#certifications">Zertifikate</a></li>
       <li><a href="#projects">Projekte</a></li>
@@ -459,114 +192,161 @@
 
 <div class="hero">
   <div class="hero-inner">
-    <div class="avatar">FN</div>
+    <div class="avatar-wrap">
+      <div class="avatar-ring"></div>
+      <div class="avatar">FN</div>
+    </div>
     <div class="hero-content">
-      <div class="hero-tag">DevOps · MLOps · DataOps · DevSecOps</div>
+      <div class="hero-eyebrow">MLOps · DevOps · Data Science · DevSecOps</div>
       <h1 class="hero-name">Fernandez <span>Nntamo</span></h1>
+      <p class="hero-title">MLOps Engineer & Architect | DevOps Engineer · <strong>M.Sc. Statistik</strong></p>
+
+      <div class="hero-badges">
+        <span class="hero-badge badge-mlops">MLOps & Model Serving</span>
+        <span class="hero-badge badge-devops">DevOps & Cloud Architecture</span>
+        <span class="hero-badge badge-ds">Data Science & Model Intelligence</span>
+      </div>
+
       <p class="hero-desc">
-        Ich konzipiere, implementiere und betreibe Cloud-Infrastrukturen, CI/CD-Pipelines 
-        und Data Services auf Kubernetes — mit Fokus auf DevSecOps, Zero-Trust-Architekturen, 
-        MLOps, ML(Sec)Ops und (Industrial) Data Science.
+        Mit <strong>über 7 Jahren Erfahrung in Data Science</strong> und
+        <strong>über 4 Jahren an der Schnittstelle von DevOps, MLOps und Data Science</strong> —
+        von der Modellentwicklung bis zur produktiven Serving-Infrastruktur und Disaster Recovery.
+        Als Data Scientist verstehe ich, wie Modelle lernen und warum sie in der Produktion driften.
+        Als DevOps Engineer baue ich die Infrastruktur, die sie am Leben hält.
+        Als MLOps Architect verbinde ich beides zu <strong>robusten, selbstheilenden ML-Systemen</strong> —
+        mit automatisiertem Retraining, Inference-Monitoring und gesicherten Endpunkten.
+        Referenzprojekte im Finanz- und Softwarebereich bei <strong>Datev</strong> und <strong>Sparda Bank</strong>
+        — sowie im Industriebereich bei <strong>Aerzen Digital Systems</strong>,
+        wo eine selbst konzipierte Echtzeit-Anomalieerkennung ungeplante Maschinenausfälle
+        um <strong>ca. 30 % reduziert</strong> hat.
       </p>
+
+      <div class="hero-kpi">
+        <div class="kpi"><span class="kpi-value">7+</span><span class="kpi-label">Jahre Erfahrung</span></div>
+        <div class="kpi"><span class="kpi-value">−30%</span><span class="kpi-label">Maschinenausfälle</span></div>
+        <div class="kpi"><span class="kpi-value">3</span><span class="kpi-label">ML-Stacks AWS/Azure/K8s</span></div>
+        <div class="kpi"><span class="kpi-value">CKA</span><span class="kpi-label">in Vorbereitung</span></div>
+      </div>
+
       <div class="hero-links">
         <a href="https://github.com/nntamo" target="_blank" class="social-btn">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           GitHub
+        </a>
+        <a href="mailto:fernandeznguimeya@gmail.com" class="social-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+          E-Mail
         </a>
       </div>
     </div>
   </div>
 </div>
 
-
+<!-- VALUE PROP STRIP -->
+<div class="value-strip" id="value">
+  <div class="value-inner">
+    <div class="value-item vi-mlops">
+      <div class="value-icon">MLOps Architect</div>
+      <div class="value-title">Modelle, die in Produktion überleben</div>
+      <div class="value-desc">Containerisiertes Serving, automatisiertes Retraining bei Drift, versionierte Artefakte und lückenloses Inference-Monitoring — ergänzt durch gesicherte Endpunkte, RBAC und revisionssichere Governance. ML-Systeme, die nicht nur ausgerollt, sondern dauerhaft gewartet, geschützt und verbessert werden.</div>
+    </div>
+    <div class="value-item vi-devops">
+      <div class="value-icon">DevOps Engineer</div>
+      <div class="value-title">Infrastruktur, die ML erst möglich macht — und nie ausfällt</div>
+      <div class="value-desc">CI/CD/CT-Pipelines, Autoscaling HPA/VPA, Zero-Trust-Netzwerke und DevSecOps auf Kubernetes — die Plattform, auf der Modelle sicher, schnell und reproduzierbar in Produktion gehen. Ergänzt durch konzipierte <strong style="color:var(--cyan)">Disaster-Recovery-Strategien</strong>: RTO/RPO-Planung, automatisierte Backups, Failover-Mechanismen und getestete Wiederherstellungsprozeduren — weil Ausfälle in ML-Produktionsumgebungen keine Option sind.</div>
+    </div>
+    <div class="value-item vi-ds">
+      <div class="value-icon">Data Scientist & Data Engineer</div>
+      <div class="value-title">Der Blick ins Modell — und auf die Daten dahinter</div>
+      <div class="value-desc">Statistisches Fundament (M.Sc.) und praktische ML/DL-Erfahrung ermöglichen es, Modellverhalten zu verstehen und Qualitätsverluste früh zu erkennen. Dazu: Echtzeit-Streaming mit Kafka, Azure Data Platform mit Databricks, sowie Storage-Optimierung — Indexierung, Vacuum, Backup und Partitionierung — für saubere, performante Datenpipelines als Grundlage jedes ML-Systems.</div>
+    </div>
+  </div>
+</div>
 
 <div class="container">
 
   <section class="section" id="skills">
     <div class="section-header">
       <div class="section-icon">//</div>
-      <h2 class="section-title">Kompetenzen</h2>
+      <div>
+        <h2 class="section-title">Kompetenzen</h2>
+        <p class="section-sub">Drei Disziplinen — ein kohärentes Skillset</p>
+      </div>
       <a href="#skills" class="section-anchor">#skills</a>
     </div>
     <div class="skills-grid">
       <div class="skill-group">
         <div class="skill-group-title">Cloud & Infrastruktur</div>
         <div class="skill-tags">
-          <span class="skill-tag cyan">AWS EKS</span>
-          <span class="skill-tag cyan">Azure</span>
-          <span class="skill-tag cyan">Terraform</span>
-          <span class="skill-tag cyan">Ansible</span>
-          <span class="skill-tag cyan">SageMaker</span>
-          <span class="skill-tag cyan">Azure ML</span>
+          <span class="skill-tag cyan">AWS EKS</span><span class="skill-tag cyan">Azure</span>
+          <span class="skill-tag cyan">Terraform</span><span class="skill-tag cyan">Ansible</span>
+          <span class="skill-tag cyan">Kubernetes</span><span class="skill-tag cyan">Helm</span>
+          <span class="skill-tag cyan">Argo CD</span><span class="skill-tag cyan">Proxmox VE</span>
           <span class="skill-tag cyan">Mendix Cloud</span>
-          <span class="skill-tag cyan">Kubernetes</span>
-          <span class="skill-tag cyan">Helm</span>
-          <span class="skill-tag cyan">Argo CD</span>
+          <span class="skill-tag cyan">Disaster Recovery</span>
+          <span class="skill-tag cyan">RTO / RPO Planung</span>
+          <span class="skill-tag cyan">Failover & Backup</span>
+          <span class="skill-tag cyan">High Availability</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">CI/CD & DevSecOps</div>
         <div class="skill-tags">
-          <span class="skill-tag amber">Jenkins</span>
-          <span class="skill-tag amber">GitHub Actions</span>
-          <span class="skill-tag amber">GitLab CI</span>
-          <span class="skill-tag amber">SonarQube</span>
-          <span class="skill-tag amber">Trivy</span>
-          <span class="skill-tag amber">Checkov</span>
-          <span class="skill-tag amber">Docker</span>
+          <span class="skill-tag amber">GitLab CI</span><span class="skill-tag amber">GitHub Actions</span>
+          <span class="skill-tag amber">Jenkins</span><span class="skill-tag amber">Argo Workflows</span>
+          <span class="skill-tag amber">SonarQube</span><span class="skill-tag amber">Trivy</span>
+          <span class="skill-tag amber">Checkov</span><span class="skill-tag amber">Docker</span>
           <span class="skill-tag amber">Kustomize</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">MLOps & Data Science</div>
+        <div class="skill-group-title">MLOps & Model Lifecycle</div>
         <div class="skill-tags">
-          <span class="skill-tag violet">MLflow</span>
-          <span class="skill-tag violet">SageMaker</span>
-          <span class="skill-tag violet">Azure ML</span>
-          <span class="skill-tag violet">Databricks</span>
-          <span class="skill-tag violet">Airflow</span>
-          <span class="skill-tag violet">PyTorch</span>
-          <span class="skill-tag violet">TensorFlow</span>
-          <span class="skill-tag violet">scikit-learn</span>
-          <span class="skill-tag violet">OpenCV</span>
-          <span class="skill-tag violet">YOLO</span>
-          <span class="skill-tag violet">TensorRT</span>
-          <span class="skill-tag violet">ONNX</span>
-          <span class="skill-tag violet">Kedro</span>
+          <span class="skill-tag violet">MLflow</span><span class="skill-tag violet">SageMaker Pipelines</span>
+          <span class="skill-tag violet">Azure ML Pipelines</span><span class="skill-tag violet">vLLM</span>
+          <span class="skill-tag violet">TensorRT</span><span class="skill-tag violet">ONNX</span>
+          <span class="skill-tag violet">Kedro</span><span class="skill-tag violet">Databricks</span>
+          <span class="skill-tag violet">Airflow</span><span class="skill-tag violet">Parashift AI</span>
         </div>
       </div>
       <div class="skill-group">
-        <div class="skill-group-title">Data Engineering</div>
+        <div class="skill-group-title">Data Science & ML/DL</div>
+        <div class="skill-tags">
+          <span class="skill-tag rose">PyTorch</span><span class="skill-tag rose">TensorFlow</span>
+          <span class="skill-tag rose">scikit-learn</span><span class="skill-tag rose">OpenCV</span>
+          <span class="skill-tag rose">YOLO · CNN · RNN</span>
+          <span class="skill-tag rose">Zeitreihenanalyse</span>
+          <span class="skill-tag rose">Feature Engineering</span>
+          <span class="skill-tag rose">Explainable AI</span>
+          <span class="skill-tag rose">PySpark</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Monitoring & Model Quality</div>
+        <div class="skill-tags">
+          <span class="skill-tag cyan">Prometheus</span><span class="skill-tag cyan">Grafana</span>
+          <span class="skill-tag cyan">Alertmanager</span><span class="skill-tag cyan">Loki</span>
+          <span class="skill-tag cyan">Datendrift-Erkennung</span>
+          <span class="skill-tag cyan">Modell-QA</span><span class="skill-tag cyan">FastAPI</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Data Engineering & Streaming</div>
         <div class="skill-tags">
           <span class="skill-tag emerald">Kafka</span>
           <span class="skill-tag emerald">Spark / PySpark</span>
-          <span class="skill-tag emerald">InfluxDB</span>
-          <span class="skill-tag emerald">PostgreSQL</span>
-          <span class="skill-tag emerald">OPC UA</span>
-          <span class="skill-tag emerald">MQTT</span>
-          <span class="skill-tag emerald">RDF / SPARQL</span>
+          <span class="skill-tag emerald">Databricks</span>
           <span class="skill-tag emerald">Azure Data Lake</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Monitoring & Observability</div>
-        <div class="skill-tags">
-          <span class="skill-tag cyan">Prometheus</span>
-          <span class="skill-tag cyan">Grafana</span>
-          <span class="skill-tag cyan">FastAPI</span>
-          <span class="skill-tag cyan">Parashift AI</span>
-        </div>
-      </div>
-      <div class="skill-group">
-        <div class="skill-group-title">Sprachen & Edge</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">R</span>
-          <span class="skill-tag">Bash</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">C++</span>
-          <span class="skill-tag">Nvidia Jetson</span>
-          <span class="skill-tag">Raspberry Pi 5</span>
+          <span class="skill-tag emerald">Delta Lake</span>
+          <span class="skill-tag emerald">Medallion Architecture</span>
+          <span class="skill-tag emerald">PostgreSQL</span>
+          <span class="skill-tag emerald">OPC UA / MQTT</span>
+          <span class="skill-tag emerald">RDF / SPARQL</span>
+          <span class="skill-tag emerald">InfluxDB</span>
+          <span class="skill-tag emerald">Indexierung & Vacuum</span>
+          <span class="skill-tag emerald">Backup & Partitionierung</span>
+          <span class="skill-tag emerald">Nvidia Jetson</span>
+          <span class="skill-tag emerald">Raspberry Pi 5</span>
         </div>
       </div>
     </div>
@@ -581,12 +361,20 @@
       <a href="#certifications" class="section-anchor">#certifications</a>
     </div>
     <div class="certs-grid">
+      <div class="cert-card in-progress">
+        <div class="cert-badge amber-b">CKA</div>
+        <div>
+          <div class="cert-name">Certified Kubernetes Administrator</div>
+          <div class="cert-issuer">Linux Foundation</div>
+          <span class="cert-status s-progress">⟳ In Vorbereitung — 04/2026</span>
+        </div>
+      </div>
       <div class="cert-card">
         <div class="cert-badge">CV</div>
         <div>
           <div class="cert-name">Master Computer Vision (CNN, YOLO, RNN)</div>
           <div class="cert-issuer">OpenCV · TensorFlow · PyTorch</div>
-          <span class="cert-status">✓ Obtenu</span>
+          <span class="cert-status s-done">✓ Erworben</span>
         </div>
       </div>
       <div class="cert-card">
@@ -594,7 +382,7 @@
         <div>
           <div class="cert-name">DevOps Engineer & DevSecOps</div>
           <div class="cert-issuer">Azure DevOps</div>
-          <span class="cert-status">✓ Obtenu</span>
+          <span class="cert-status s-done">✓ Erworben</span>
         </div>
       </div>
       <div class="cert-card">
@@ -602,7 +390,7 @@
         <div>
           <div class="cert-name">Applied AI Lab — Deep Learning for Computer Vision</div>
           <div class="cert-issuer">WorldQuant University</div>
-          <span class="cert-status">✓ Obtenu</span>
+          <span class="cert-status s-done">✓ Erworben</span>
         </div>
       </div>
       <div class="cert-card">
@@ -610,7 +398,7 @@
         <div>
           <div class="cert-name">DevOps Engineer</div>
           <div class="cert-issuer">Université Paris Sorbonne</div>
-          <span class="cert-status">✓ Obtenu</span>
+          <span class="cert-status s-done">✓ Erworben</span>
         </div>
       </div>
     </div>
@@ -624,47 +412,36 @@
       <h2 class="section-title">Projekte</h2>
       <a href="#projects" class="section-anchor">#projects</a>
     </div>
-
     <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterProjects('all', this)">Alle</button>
-      <button class="filter-btn" onclick="filterProjects('devops', this)">DevOps · Cloud</button>
-      <button class="filter-btn" onclick="filterProjects('cicd', this)">CI/CD</button>
-      <button class="filter-btn" onclick="filterProjects('mlops', this)">MLOps · Data Science</button>
-      <button class="filter-btn" onclick="filterProjects('data', this)">Data Engineering</button>
+      <button class="filter-btn active" onclick="filterProjects('all',this)">Alle</button>
+      <button class="filter-btn" onclick="filterProjects('devops',this)">DevOps · Cloud</button>
+      <button class="filter-btn" onclick="filterProjects('cicd',this)">CI/CD</button>
+      <button class="filter-btn" onclick="filterProjects('mlops',this)">MLOps</button>
+      <button class="filter-btn" onclick="filterProjects('ds',this)">Data Science</button>
+      <button class="filter-btn" onclick="filterProjects('data',this)">Data Engineering</button>
     </div>
-
     <div class="projects-grid">
 
       <div class="project-card" data-category="devops">
-        <div class="project-accent devops"></div>
+        <div class="project-accent pa-devops"></div>
         <div class="project-body">
           <div class="project-header">
             <div class="project-title">Project-DevOps — AWS Infrastructure</div>
-            <span class="project-badge badge-devops">DevOps · Cloud</span>
+            <span class="project-badge pb-devops">DevOps · Cloud</span>
           </div>
-          <p class="project-desc">
-            Aufbau einer produktionsreifen DevOps-Infrastruktur auf AWS mit EKS, Terraform, 
-            Kustomize und vollständigem Monitoring-Stack — kein manuelles Deployment mehr.
-          </p>
+          <p class="project-desc">Produktionsreife DevOps-Infrastruktur auf AWS — vollständig automatisiert, überwacht und sicher, kein manuelles Deployment mehr.</p>
           <ul class="project-highlights">
             <li>VPC, EKS-Cluster, RDS Postgres & Storage vollständig mit Terraform provisioniert</li>
-            <li>Kubernetes-Deployments via Kustomize (Frontend React/Nginx + Backend Node.js)</li>
-            <li>Prometheus + Grafana Monitoring-Stack mit Alert-Regeln</li>
-            <li>CI/CD-Pipeline (GitHub Actions) — Build, Push zu ECR, Deploy auf EKS</li>
-            <li>DevSecOps: AWS IAM, SonarQube, Secrets-Management, RBAC & Network Policies</li>
-            <li>HPA Autoscaling, High-Availability-Konzepte, Chaos-Testing</li>
+            <li>CI/CD via GitHub Actions — Build → ECR → EKS ohne manuelle Schritte</li>
+            <li>Prometheus + Grafana Monitoring mit Alert-Regeln und HPA Autoscaling</li>
+            <li>DevSecOps: RBAC, Network Policies, SonarQube, Secrets-Management, IAM</li>
+            <li><strong style="color:var(--cyan)">Disaster Recovery konzipiert und implementiert</strong> — RTO/RPO-Ziele definiert, automatisierte Backups, Multi-AZ Failover und getestete Wiederherstellungsprozeduren für unterbrechungsfreien Betrieb</li>
           </ul>
           <div class="project-footer">
             <div class="tech-tags">
-              <span class="tech-tag">AWS EKS</span>
-              <span class="tech-tag">Terraform</span>
-              <span class="tech-tag">Kustomize</span>
-              <span class="tech-tag">Helm</span>
-              <span class="tech-tag">Prometheus</span>
-              <span class="tech-tag">Grafana</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">GitHub Actions</span>
-              <span class="tech-tag">SonarQube</span>
+              <span class="tech-tag">AWS EKS</span><span class="tech-tag">Terraform</span>
+              <span class="tech-tag">Kustomize</span><span class="tech-tag">Helm</span>
+              <span class="tech-tag">Prometheus</span><span class="tech-tag">GitHub Actions</span>
             </div>
             <a href="https://github.com/nntamo/Project-DevOps" target="_blank" class="project-link">Repo →</a>
           </div>
@@ -672,34 +449,23 @@
       </div>
 
       <div class="project-card" data-category="cicd">
-        <div class="project-accent cicd"></div>
+        <div class="project-accent pa-cicd"></div>
         <div class="project-body">
           <div class="project-header">
             <div class="project-title">Jenkins CI/CD — FastAPI Microservices auf Kubernetes</div>
-            <span class="project-badge badge-cicd">CI/CD · DevSecOps</span>
+            <span class="project-badge pb-cicd">CI/CD · DevSecOps</span>
           </div>
-          <p class="project-desc">
-            Production-grade CI/CD-Pipeline für FastAPI-Microservices über 4 Umgebungen (dev, qa, staging, prod) 
-            via Jenkins und Kubernetes — mit manuellen Freigaben, Security-Scanning und erzwungenem HTTPS.
-          </p>
+          <p class="project-desc">13-stufige Production-Pipeline für FastAPI über 4 Umgebungen — Sicherheit und Qualität als Architekturentscheidung, nicht als Nachgedanke.</p>
           <ul class="project-highlights">
-            <li>13 Pipeline-Stages im Jenkinsfile — automatischer Trigger via GitHub Webhook</li>
-            <li>2 FastAPI-Dienste hinter NGINX-Reverse-Proxy mit TLS 1.2/1.3 & HSTS</li>
-            <li>4 Kubernetes-Namespaces (dev/qa/staging/prod) mit Rolling Updates, 3 Replicas</li>
-            <li>Manuelle Freigaben + automatische Git-Merges zwischen Umgebungen</li>
-            <li>Pods ohne Root-Rechte, Secrets nur zur Laufzeit injiziert, NetworkPolicy</li>
+            <li>4 Namespaces (dev/qa/staging/prod) mit Rolling Updates und 3 Replicas</li>
+            <li>TLS 1.2/1.3, HSTS, Pods ohne Root-Rechte, Secrets nur zur Laufzeit injiziert</li>
+            <li>Manuelle Freigaben + automatische Git-Merges zwischen Stufen</li>
           </ul>
           <div class="project-footer">
             <div class="tech-tags">
-              <span class="tech-tag">Jenkins</span>
-              <span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">Kubernetes</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Helm</span>
-              <span class="tech-tag">NGINX</span>
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">Docker Hub</span>
-              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Jenkins</span><span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">Kubernetes</span><span class="tech-tag">NGINX</span>
+              <span class="tech-tag">Docker</span><span class="tech-tag">Helm</span>
             </div>
             <a href="https://github.com/nntamo/jenskin-pipeline-cicd" target="_blank" class="project-link">Repo →</a>
           </div>
@@ -707,33 +473,50 @@
       </div>
 
       <div class="project-card" data-category="mlops">
-        <div class="project-accent mlops"></div>
+        <div class="project-accent pa-mlops"></div>
         <div class="project-body">
           <div class="project-header">
-            <div class="project-title">Data-Science — ML & Analytics</div>
-            <span class="project-badge badge-mlops">MLOps · Data Science</span>
+            <div class="project-title">MLOps — Model Lifecycle & Serving</div>
+            <span class="project-badge pb-mlops">MLOps · Produktion</span>
           </div>
-          <p class="project-desc">
-            End-to-End Data-Science- und MLOps-Projekte mit Fokus auf Machine-Learning-Engineering 
-            und datengetriebene Lösungen in produktionsnahen Umgebungen.
-          </p>
+          <p class="project-desc">End-to-End MLOps-Infrastruktur: von der Modellregistrierung über das Serving bis zum automatisierten Retraining bei Qualitätsverlust.</p>
           <ul class="project-highlights">
-            <li>Machine-Learning-Modelle: Training, Evaluation und Deployment</li>
-            <li>Computer Vision mit CNN, YOLO — OpenCV, TensorFlow, PyTorch</li>
-            <li>Datenanalyse, Feature Engineering und Pipeline-Automatisierung</li>
-            <li>MLSecOps-Praktiken: sichere Modell-Pipelines und Compliance</li>
-            <li>Integration mit Azure Databricks und semantischen Wissensgraphen (SHACL/RDF)</li>
+            <li>Versionierte Modell-Artefakte mit MLflow — reproduzierbar über alle Umgebungen</li>
+            <li>Automatisiertes Retraining bei Datendrift — Argo Workflows / SageMaker / Azure ML Pipelines</li>
+            <li>Inference-Monitoring: Latenzen, Drift und Modellverhalten mit Prometheus & Grafana</li>
+            <li>Gesicherte Inference-Endpunkte: TLS, RBAC, Authentifizierung für ML-APIs</li>
           </ul>
           <div class="project-footer">
             <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">TensorFlow</span>
-              <span class="tech-tag">PyTorch</span>
-              <span class="tech-tag">MLflow</span>
-              <span class="tech-tag">Airflow</span>
+              <span class="tech-tag">MLflow</span><span class="tech-tag">Kubernetes</span>
+              <span class="tech-tag">Argo Workflows</span><span class="tech-tag">Prometheus</span>
+              <span class="tech-tag">SageMaker</span><span class="tech-tag">Azure ML</span>
+            </div>
+            <a href="https://github.com/nntamo/Data-Science" target="_blank" class="project-link">Repo →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" data-category="ds">
+        <div class="project-accent pa-ds"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title">Data Science — ML/DL & Modelloptimierung</div>
+            <span class="project-badge pb-ds">Data Science · ML/DL</span>
+          </div>
+          <p class="project-desc">ML- und Deep-Learning-Projekte mit Fokus auf Modellqualität, Erklärbarkeit und Inference-Optimierung — das Fundament für gutes MLOps.</p>
+          <ul class="project-highlights">
+            <li>Anomalieerkennung in Industriedaten — PyTorch, scikit-learn, Zeitreihenanalyse; −30% Maschinenausfälle</li>
+            <li>Computer Vision (CNN, YOLO) für Echtzeit-Klassifikation auf Edge-Hardware (Nvidia Jetson)</li>
+            <li>Inference-Optimierung mit TensorRT und ONNX — erhebliche Latenzreduktion</li>
+            <li>Explainable AI und Feature Engineering für Churn- und Kaufwahrscheinlichkeitsmodelle</li>
+          </ul>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">PyTorch</span><span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">YOLO</span><span class="tech-tag">TensorRT</span>
+              <span class="tech-tag">ONNX</span><span class="tech-tag">PySpark</span>
               <span class="tech-tag">Databricks</span>
-              <span class="tech-tag">OpenCV</span>
-              <span class="tech-tag">YOLO</span>
             </div>
             <a href="https://github.com/nntamo/Data-Science" target="_blank" class="project-link">Repo →</a>
           </div>
@@ -741,32 +524,26 @@
       </div>
 
       <div class="project-card" data-category="data">
-        <div class="project-accent data"></div>
+        <div class="project-accent pa-data"></div>
         <div class="project-body">
           <div class="project-header">
             <div class="project-title">Cloud-Data-Engineering — Daten & Analytics</div>
-            <span class="project-badge badge-data">Data Engineering · Cloud</span>
+            <span class="project-badge pb-data">Data Engineering · Cloud</span>
           </div>
-          <p class="project-desc">
-            Data-Engineering- und Analytics-Projekte mit Fokus auf moderne Datenarchitekturen 
-            und Cloud-Datenpipelines — von der Datenerfassung bis zur Bereitstellung.
-          </p>
+          <p class="project-desc">Moderne Cloud-Datenarchitekturen — von der Echtzeit-Erfassung industrieller Datenströme bis zur optimierten Azure Data Platform als Feature-Basis für ML-Modelle.</p>
           <ul class="project-highlights">
-            <li>Moderne Datenarchitektur — End-to-End-Design und Implementierung</li>
-            <li>Data Engineering auf Open-Source-Plattformen</li>
-            <li>Migration von On-Premises zu Azure SQL DB</li>
-            <li>Azure Data Lake Architektur (Bronze–Silver–Gold Medallion)</li>
-            <li>DevOps-Integration für Datenplattformen</li>
+            <li>Echtzeit-Streaming mit Apache Kafka — mehrere tausend Events/Sekunde via OPC UA & MQTT</li>
+            <li>Azure Data Platform mit Databricks — Medallion-Architektur (Bronze–Silver–Gold) auf Delta Lake</li>
+            <li>Storage-Optimierung: Indexierung, Vacuum, Partitionierung und automatisiertes Backup für performante Datenpipelines</li>
+            <li>Migration On-Premises -> Azure SQL DB mit vollständiger DevOps-Integration</li>
+            <li>Feature Store-Integration als saubere Datenbasis für ML-Modelle in der Produktion</li>
           </ul>
           <div class="project-footer">
             <div class="tech-tags">
-              <span class="tech-tag">Python</span>
-              <span class="tech-tag">Azure</span>
-              <span class="tech-tag">Azure SQL</span>
-              <span class="tech-tag">Data Lake</span>
-              <span class="tech-tag">Docker</span>
-              <span class="tech-tag">Airflow</span>
-              <span class="tech-tag">SQL</span>
+              <span class="tech-tag">Kafka</span><span class="tech-tag">Databricks</span>
+              <span class="tech-tag">Delta Lake</span><span class="tech-tag">Azure Data Lake</span>
+              <span class="tech-tag">PySpark</span><span class="tech-tag">Airflow</span>
+              <span class="tech-tag">PostgreSQL</span><span class="tech-tag">OPC UA</span>
             </div>
             <a href="https://github.com/nntamo/Cloud-Data-Engineering" target="_blank" class="project-link">Repo →</a>
           </div>
@@ -786,8 +563,8 @@
     </div>
     <div class="contact-card">
       <div>
-        <h3>Zusammenarbeiten</h3>
-        <p>DevOps · MLOps · Cloud Infrastructure · DataOps · DevSecOps</p>
+        <h3>Zusammenarbeiten?</h3>
+        <p>MLOps · DevOps · Data Science · Cloud Infrastructure · DevSecOps</p>
       </div>
       <a href="https://github.com/nntamo" target="_blank" class="btn-primary">
         <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
@@ -799,7 +576,10 @@
 </div>
 
 <footer>
-  <p>© 2026 Fernandez Nntamo — <span>DevOps & MLOps Engineer</span> — <span>"Build it right, automate it well, secure it always."</span></p>
+  <p>
+    © 2026 <span>Fernandez Nntamo</span> — MLOps Engineer & Architect · M.Sc. Statistik<br>
+    <span>"Data Science versteht das Modell. DevOps hält die Plattform am Laufen. MLOps verbindet beides — dauerhaft."</span>
+  </p>
 </footer>
 
 <script>
@@ -807,14 +587,9 @@
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.querySelectorAll('.project-card').forEach(card => {
-      if (category === 'all' || card.dataset.category === category) {
-        card.classList.remove('hidden');
-      } else {
-        card.classList.add('hidden');
-      }
+      card.classList.toggle('hidden', category !== 'all' && card.dataset.category !== category);
     });
   }
 </script>
-
 </body>
 </html>
