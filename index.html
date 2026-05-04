@@ -505,7 +505,7 @@
             <li>Keyless OIDC/JWT-Authentifizierung gegen AWS STS, Azure Entra ID und GCP STS — ein JWT pro Job, zur Laufzeit generiert, nach ~1h automatisch abgelaufen, nichts gespeichert</li>
             <li>EC2 Self-hosted Runner — bewusste Wahl (Azure VM oder GCP Compute Engine wären äquivalent) mit VPN/WireGuard-Tunnel zu privaten Cloud-Ressourcen und IAM Least-Privilege pro Job</li>
             <li>Defense-in-Depth über 5 unabhängige Sicherheitsebenen: VPN/WireGuard · TLS 1.2+ · OIDC/JWT · IAM Least-Privilege · Secrets Manager (HashiCorp Vault / AWS SSM / Azure Key Vault / GCP Secret Manager)</li>
-            <li>Obligatorische Pipeline-Gates: check → analyse → apply → deploy — keine Stage kann übersprungen werden, kein Deployment ohne vollständigen Audit-Trail</li>
+            <li>Obligatorische Pipeline-Gates: check -> analyse -> apply -> deploy — keine Stage kann übersprungen werden, kein Deployment ohne vollständigen Audit-Trail</li>
             <li><strong style="color:var(--cyan)">0 credentials gespeichert</strong> — 100% keyless Authentifizierung über 3 Clouds gleichzeitig</li>
           </ul>
           <div class="project-footer">
