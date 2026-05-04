@@ -4,6 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fernandez Nntamo — MLOps Engineer & Architect</title>
+  <meta name="description" content="Fernandez Nntamo — MLOps Engineer & Architect | DevOps | Data Science | M.Sc. Statistik. Multi-cloud CI/CD, keyless OIDC, AWS · Azure · GCP." />
+  <meta property="og:title" content="Fernandez Nntamo — MLOps Engineer & Architect" />
+  <meta property="og:description" content="Production-grade MLOps platform. Multi-cloud CI/CD. Zero static credentials. AWS · Azure · GCP." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Fernandez Nntamo — MLOps Engineer & Architect" />
+  <meta name="twitter:description" content="Production-grade MLOps platform. Multi-cloud CI/CD. Zero static credentials." />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -66,7 +73,6 @@
     .social-btn{font-family:var(--mono);font-size:.7rem;font-weight:500;padding:.45rem 1rem;border-radius:6px;text-decoration:none;border:1px solid var(--border2);color:var(--muted);background:var(--surface2);transition:all .2s;display:flex;align-items:center;gap:.45rem}
     .social-btn:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-bg);box-shadow:0 0 16px var(--cyan-glow)}
 
-    /* VALUE STRIP */
     .value-strip{background:var(--surface);border-bottom:1px solid var(--border);position:relative;z-index:1}
     .value-inner{max-width:1140px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(3,1fr)}
     .value-item{padding:2rem 1.75rem;border-right:1px solid var(--border);transition:background .2s}
@@ -90,8 +96,8 @@
     .section-anchor:hover{color:var(--cyan)}
 
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1rem}
-    .skill-group{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;transition:border-color .2s,transform .2s}
-    .skill-group:hover{border-color:var(--border2);transform:translateY(-1px)}
+    .skill-group{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;transition:border-color .25s,transform .25s,box-shadow .25s}
+    .skill-group:hover{border-color:rgba(0,229,255,0.25);transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,229,255,0.05)}
     .skill-group-title{font-family:var(--mono);font-size:.64rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:.9rem}
     .skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
     .skill-tag{font-family:var(--mono);font-size:.67rem;font-weight:500;padding:.22rem .6rem;border-radius:4px;border:1px solid var(--border2);color:var(--muted);background:var(--surface2);transition:all .15s}
@@ -122,15 +128,18 @@
     .filter-btn.active{background:var(--cyan);color:#07090e;border-color:var(--cyan);font-weight:700}
 
     .projects-grid{display:grid;gap:1.25rem}
-    .project-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;transition:border-color .2s,box-shadow .2s,transform .2s}
+    .project-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;transition:border-color .25s,box-shadow .25s,transform .25s}
     .project-card:hover{border-color:rgba(0,229,255,0.28);box-shadow:0 6px 32px rgba(0,229,255,0.07);transform:translateY(-2px)}
     .project-card.hidden{display:none}
+    .project-card[data-category="cicd mlops"]{border-color:rgba(0,229,255,0.18);box-shadow:0 0 0 1px rgba(167,139,250,0.08) inset}
+    .project-card[data-category="cicd mlops"]:hover{border-color:rgba(167,139,250,0.45);box-shadow:0 8px 40px rgba(167,139,250,0.12),0 4px 20px rgba(0,229,255,0.08);transform:translateY(-3px)}
     .project-accent{width:3px;flex-shrink:0}
     .pa-devops{background:linear-gradient(180deg,var(--cyan),var(--cyan-dim))}
     .pa-cicd{background:linear-gradient(180deg,var(--amber),#d97706)}
     .pa-mlops{background:linear-gradient(180deg,var(--violet),#7c3aed)}
     .pa-data{background:linear-gradient(180deg,var(--emerald),#059669)}
     .pa-ds{background:linear-gradient(180deg,var(--rose),#e11d48)}
+    .pa-multicloud{background:linear-gradient(180deg,#00e5ff 0%,#a78bfa 50%,#34d399 100%)}
     .project-body{padding:1.75rem 2rem;flex:1}
     .project-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.75rem}
     .project-title{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--text)}
@@ -140,6 +149,7 @@
     .pb-mlops{background:var(--violet-bg);color:var(--violet);border:1px solid rgba(167,139,250,0.2)}
     .pb-data{background:var(--emerald-bg);color:var(--emerald);border:1px solid rgba(52,211,153,0.2)}
     .pb-ds{background:var(--rose-bg);color:var(--rose);border:1px solid rgba(251,113,133,0.2)}
+    .pb-multicloud{background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(167,139,250,0.08));color:var(--cyan);border:1px solid rgba(0,229,255,0.2)}
     .project-desc{font-size:.87rem;color:var(--muted);line-height:1.75;margin-bottom:1.1rem}
     .project-highlights{list-style:none;margin-bottom:1.25rem;display:grid;gap:.35rem}
     .project-highlights li{font-size:.82rem;color:var(--muted);display:flex;align-items:baseline;gap:.5rem;line-height:1.55}
@@ -150,7 +160,8 @@
     .project-link{font-family:var(--mono);font-size:.68rem;font-weight:600;color:var(--cyan);text-decoration:none;display:flex;align-items:center;gap:.35rem;padding:.38rem .85rem;border:1px solid rgba(0,229,255,0.35);border-radius:6px;transition:all .18s;white-space:nowrap;letter-spacing:.05em}
     .project-link:hover{background:var(--cyan);color:#07090e;box-shadow:0 0 16px rgba(0,229,255,0.35)}
 
-    .contact-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;position:relative;overflow:hidden}
+    .contact-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s}
+    .contact-card:hover{border-color:rgba(0,229,255,0.3);box-shadow:0 8px 40px rgba(0,229,255,0.08)}
     .contact-card::before{content:'';position:absolute;bottom:-80px;right:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(0,229,255,0.05) 0%,transparent 70%);pointer-events:none}
     .contact-card h3{font-family:var(--display);font-size:1.3rem;font-weight:700;margin-bottom:.4rem;color:var(--text)}
     .contact-card p{font-size:.87rem;color:var(--muted)}
@@ -179,7 +190,7 @@
 
 <nav>
   <div class="nav-inner">
-    <a href="#" class="logo"><div class="logo-pulse"></div>nntamo.github.io</a>
+    <a href="https://nntamo.github.io" target="_blank" class="logo"><div class="logo-pulse"></div>nntamo.github.io</a>
     <ul class="nav-links">
       <li><a href="#value">Profil</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -225,6 +236,7 @@
         <div class="kpi"><span class="kpi-value">7+</span><span class="kpi-label">Jahre Erfahrung</span></div>
         <div class="kpi"><span class="kpi-value">−30%</span><span class="kpi-label">Maschinenausfälle</span></div>
         <div class="kpi"><span class="kpi-value">3</span><span class="kpi-label">ML-Stacks AWS/Azure/K8s</span></div>
+        <div class="kpi"><span class="kpi-value">0</span><span class="kpi-label">Static credentials</span></div>
         <div class="kpi"><span class="kpi-value">CKA</span><span class="kpi-label">in Vorbereitung</span></div>
       </div>
 
@@ -233,16 +245,12 @@
           <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           GitHub
         </a>
-        <a href="mailto:xxxxxxxxxxxxxxx" class="social-btn">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-          E-Mail
-        </a>
+
       </div>
     </div>
   </div>
 </div>
 
-<!-- VALUE PROP STRIP -->
 <div class="value-strip" id="value">
   <div class="value-inner">
     <div class="value-item vi-mlops">
@@ -279,6 +287,7 @@
         <div class="skill-group-title">Cloud & Infrastruktur</div>
         <div class="skill-tags">
           <span class="skill-tag cyan">AWS EKS</span><span class="skill-tag cyan">Azure</span>
+          <span class="skill-tag cyan">GCP</span>
           <span class="skill-tag cyan">Terraform</span><span class="skill-tag cyan">Ansible</span>
           <span class="skill-tag cyan">Kubernetes</span><span class="skill-tag cyan">Helm</span>
           <span class="skill-tag cyan">Argo CD</span><span class="skill-tag cyan">Proxmox VE</span>
@@ -294,6 +303,8 @@
         <div class="skill-tags">
           <span class="skill-tag amber">GitLab CI</span><span class="skill-tag amber">GitHub Actions</span>
           <span class="skill-tag amber">Jenkins</span><span class="skill-tag amber">Argo Workflows</span>
+          <span class="skill-tag amber">OIDC / JWT</span>
+          <span class="skill-tag amber">WireGuard VPN</span>
           <span class="skill-tag amber">SonarQube</span><span class="skill-tag amber">Trivy</span>
           <span class="skill-tag amber">Checkov</span><span class="skill-tag amber">Docker</span>
           <span class="skill-tag amber">Kustomize</span>
@@ -303,7 +314,9 @@
         <div class="skill-group-title">MLOps & Model Lifecycle</div>
         <div class="skill-tags">
           <span class="skill-tag violet">MLflow</span><span class="skill-tag violet">SageMaker Pipelines</span>
-          <span class="skill-tag violet">Azure ML Pipelines</span><span class="skill-tag violet">vLLM</span>
+          <span class="skill-tag violet">Azure ML Pipelines</span>
+          <span class="skill-tag violet">Vertex AI</span>
+          <span class="skill-tag violet">vLLM</span>
           <span class="skill-tag violet">TensorRT</span><span class="skill-tag violet">ONNX</span>
           <span class="skill-tag violet">Kedro</span><span class="skill-tag violet">Databricks</span>
           <span class="skill-tag violet">Airflow</span><span class="skill-tag violet">Parashift AI</span>
@@ -472,6 +485,51 @@
         </div>
       </div>
 
+      <!-- NOUVEAU PROJET : MLOps Central CI/CD Multi-Cloud -->
+      <div class="project-card" data-category="cicd mlops">
+        <div class="project-accent pa-multicloud"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div>
+              <div style="font-family:var(--mono);font-size:.58rem;color:var(--cyan);letter-spacing:.14em;margin-bottom:.4rem;opacity:.75">★ FEATURED PROJECT</div>
+              <div class="project-title">MLOps Central CI/CD — Multi-Cloud Infrastructure</div>
+            </div>
+            <span class="project-badge pb-multicloud">CI/CD · MLOps · DevSecOps</span>
+          </div>
+          <p class="project-desc">
+            Eine produktionsreife MLOps-Plattform, die Modelle über AWS, Azure und GCP ausliefert —
+            ohne ein einziges gespeichertes Credential, ohne manuelle Key-Rotation, ohne Kompromisse bei der Sicherheit auf irgendeiner Ebene.
+          </p>
+          <ul class="project-highlights">
+            <li>Zentrales GitLab-Repo-Pattern — 5 autonome Repos (model-build, model-deploy, infrastructure, inferenz, model-registry) konvergieren in einem einzigen Orchestrierungspunkt mit vollständiger Isolation zwischen den Domains</li>
+            <li>Keyless OIDC/JWT-Authentifizierung gegen AWS STS, Azure Entra ID und GCP STS — ein JWT pro Job, zur Laufzeit generiert, nach ~1h automatisch abgelaufen, nichts gespeichert</li>
+            <li>EC2 Self-hosted Runner — bewusste Wahl (Azure VM oder GCP Compute Engine wären äquivalent) mit VPN/WireGuard-Tunnel zu privaten Cloud-Ressourcen und IAM Least-Privilege pro Job</li>
+            <li>Defense-in-Depth über 5 unabhängige Sicherheitsebenen: VPN/WireGuard · TLS 1.2+ · OIDC/JWT · IAM Least-Privilege · Secrets Manager (HashiCorp Vault / AWS SSM / Azure Key Vault / GCP Secret Manager)</li>
+            <li>Obligatorische Pipeline-Gates: check → analyse → apply → deploy — keine Stage kann übersprungen werden, kein Deployment ohne vollständigen Audit-Trail</li>
+            <li><strong style="color:var(--cyan)">0 credentials gespeichert</strong> — 100% keyless Authentifizierung über 3 Clouds gleichzeitig</li>
+          </ul>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">GitLab CI</span>
+              <span class="tech-tag">OIDC / JWT</span>
+              <span class="tech-tag">AWS STS</span>
+              <span class="tech-tag">Azure Entra ID</span>
+              <span class="tech-tag">GCP STS</span>
+              <span class="tech-tag">EC2</span>
+              <span class="tech-tag">WireGuard</span>
+              <span class="tech-tag">Terraform</span>
+              <span class="tech-tag">SageMaker</span>
+              <span class="tech-tag">Vertex AI</span>
+              <span class="tech-tag">Azure ML</span>
+            </div>
+            <div style="display:flex;gap:.5rem">
+              <a href="https://github.com/nntamo/mlops-multicloud-cicd#readme" target="_blank" class="project-link" style="border-color:rgba(167,139,250,0.35);color:var(--violet)">Docs →</a>
+              <a href="https://github.com/nntamo/mlops-multicloud-cicd" target="_blank" class="project-link">Repo →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="project-card" data-category="mlops">
         <div class="project-accent pa-mlops"></div>
         <div class="project-body">
@@ -578,7 +636,7 @@
 <footer>
   <p>
     © 2026 <span>Fernandez Nntamo</span> — MLOps Engineer & Architect · M.Sc. Statistik<br>
-    <span>"Data Science versteht das Modell. DevOps hält die Plattform am Laufen. MLOps verbindet beides — dauerhaft."</span>
+    <span>"Data Science understands the model. DevOps keeps the platform running. MLOps connects both — permanently."</span>
   </p>
 </footer>
 
@@ -587,7 +645,8 @@
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.querySelectorAll('.project-card').forEach(card => {
-      card.classList.toggle('hidden', category !== 'all' && card.dataset.category !== category);
+      const cats = card.dataset.category.split(' ');
+      card.classList.toggle('hidden', category !== 'all' && !cats.includes(category));
     });
   }
 </script>
