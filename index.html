@@ -235,7 +235,9 @@
       <div class="hero-kpi">
         <div class="kpi"><span class="kpi-value">7+</span><span class="kpi-label">Jahre Erfahrung</span></div>
         <div class="kpi"><span class="kpi-value">−30%</span><span class="kpi-label">Maschinenausfälle</span></div>
-        <div class="kpi"><span class="kpi-value">3</span><span class="kpi-label">ML-Stacks AWS/Azure/K8s</span></div>
+        <div class="kpi"><span class="kpi-value">100%</span><span class="kpi-label">Automated pipelines</span></div>
+        <div class="kpi"><span class="kpi-value">0</span><span class="kpi-label">Manual deployments</span></div>
+        <div class="kpi"><span class="kpi-value">3</span><span class="kpi-label">Clouds AWS · Azure · GCP</span></div>
         <div class="kpi"><span class="kpi-value">0</span><span class="kpi-label">Static credentials</span></div>
         <div class="kpi"><span class="kpi-value">CKA</span><span class="kpi-label">in Vorbereitung</span></div>
       </div>
@@ -505,7 +507,7 @@
             <li>Keyless OIDC/JWT-Authentifizierung gegen AWS STS, Azure Entra ID und GCP STS — ein JWT pro Job, zur Laufzeit generiert, nach ~1h automatisch abgelaufen, nichts gespeichert</li>
             <li>EC2 Self-hosted Runner — bewusste Wahl (Azure VM oder GCP Compute Engine wären äquivalent) mit VPN/WireGuard-Tunnel zu privaten Cloud-Ressourcen und IAM Least-Privilege pro Job</li>
             <li>Defense-in-Depth über 5 unabhängige Sicherheitsebenen: VPN/WireGuard · TLS 1.2+ · OIDC/JWT · IAM Least-Privilege · Secrets Manager (HashiCorp Vault / AWS SSM / Azure Key Vault / GCP Secret Manager)</li>
-            <li>Obligatorische Pipeline-Gates: check -> analyse -> apply -> deploy — keine Stage kann übersprungen werden, kein Deployment ohne vollständigen Audit-Trail</li>
+            <li>Obligatorische Pipeline-Gates: check → analyse → apply → deploy — keine Stage kann übersprungen werden, kein Deployment ohne vollständigen Audit-Trail</li>
             <li><strong style="color:var(--cyan)">0 credentials gespeichert</strong> — 100% keyless Authentifizierung über 3 Clouds gleichzeitig</li>
           </ul>
           <div class="project-footer">
