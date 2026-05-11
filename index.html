@@ -5,12 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fernandez Nntamo — MLOps Engineer & Architect</title>
   <meta name="description" content="Fernandez Nntamo — MLOps Engineer & Architect | DevOps | Data Science | M.Sc. Statistik. Multi-cloud CI/CD, keyless OIDC, AWS · Azure · GCP." />
-  <meta property="og:title" content="Fernandez Nntamo — MLOps Engineer & Architect" />
-  <meta property="og:description" content="Production-grade MLOps platform. Multi-cloud CI/CD. Zero static credentials. AWS · Azure · GCP." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Fernandez Nntamo — MLOps Engineer & Architect" />
-  <meta name="twitter:description" content="Production-grade MLOps platform. Multi-cloud CI/CD. Zero static credentials." />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -27,7 +21,6 @@
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;overflow-x:hidden}
     body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,229,255,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(0,229,255,0.02) 1px,transparent 1px);background-size:42px 42px;pointer-events:none;z-index:0}
-
     nav{background:rgba(7,9,14,0.9);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(20px)}
     .nav-inner{max-width:1140px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center;height:56px}
     .logo{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--text);text-decoration:none;display:flex;align-items:center;gap:9px}
@@ -36,7 +29,6 @@
     .nav-links{display:flex;list-style:none}
     .nav-links a{font-family:var(--mono);font-size:.68rem;font-weight:500;color:var(--muted);text-decoration:none;padding:0 .9rem;height:56px;display:flex;align-items:center;border-bottom:2px solid transparent;letter-spacing:.08em;text-transform:uppercase;transition:all .2s}
     .nav-links a:hover{color:var(--cyan);border-bottom-color:var(--cyan)}
-
     .hero{background:var(--surface);border-bottom:1px solid var(--border);padding:5rem 0 4rem;position:relative;overflow:hidden;z-index:1}
     .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(0,229,255,0.06) 0%,transparent 65%);pointer-events:none}
     .hero::after{content:'';position:absolute;bottom:-100px;left:-80px;width:350px;height:350px;background:radial-gradient(circle,rgba(167,139,250,0.05) 0%,transparent 65%);pointer-events:none}
@@ -46,33 +38,27 @@
     .avatar-ring{position:absolute;inset:-7px;border-radius:50%;border:1px solid rgba(0,229,255,0.3);animation:spin-slow 14s linear infinite}
     .avatar-ring::before{content:'';position:absolute;top:-3px;left:50%;width:6px;height:6px;border-radius:50%;background:var(--cyan);transform:translateX(-50%);box-shadow:0 0 8px var(--cyan)}
     @keyframes spin-slow{to{transform:rotate(360deg)}}
-
     .hero-eyebrow{font-family:var(--mono);font-size:.66rem;color:var(--cyan);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
     .hero-eyebrow::before{content:'';width:24px;height:1px;background:var(--cyan)}
     .hero-name{font-family:var(--display);font-size:2.7rem;font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:.45rem}
     .hero-name span{color:var(--cyan)}
     .hero-title{font-family:var(--mono);font-size:.78rem;color:var(--muted);margin-bottom:.6rem;letter-spacing:.04em}
     .hero-title strong{color:var(--violet);font-weight:500}
-
     .hero-badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.4rem}
-    .hero-badge{font-family:var(--mono);font-size:.61rem;font-weight:600;padding:.22rem .7rem;border-radius:20px;letter-spacing:.06em;display:flex;align-items:center;gap:.4rem}
+    .hero-badge{font-family:var(--mono);font-size:.61rem;font-weight:600;padding:.22rem .7rem;border-radius:20px;letter-spacing:.06em}
     .badge-mlops{background:var(--violet-bg);color:var(--violet);border:1px solid rgba(167,139,250,0.3)}
     .badge-devops{background:var(--cyan-bg);color:var(--cyan);border:1px solid rgba(0,229,255,0.3)}
     .badge-ds{background:var(--emerald-bg);color:var(--emerald);border:1px solid rgba(52,211,153,0.3)}
-
     .hero-desc{font-size:.94rem;color:#cbd5e1;line-height:1.88;max-width:620px;margin-bottom:1.6rem;border-left:2px solid var(--cyan);padding-left:1.25rem}
     .hero-desc strong{color:#cbd5e1;font-weight:600}
     .hero-desc em{color:#cbd5e1;font-style:normal;font-family:var(--mono);font-size:.85em}
-
     .hero-kpi{display:flex;gap:2.2rem;margin-bottom:1.75rem;flex-wrap:wrap}
     .kpi{display:flex;flex-direction:column;gap:.18rem}
     .kpi-value{font-family:var(--display);font-size:1.6rem;font-weight:800;color:var(--cyan);line-height:1}
     .kpi-label{font-family:var(--mono);font-size:.6rem;color:var(--muted);letter-spacing:.09em;text-transform:uppercase}
-
     .hero-links{display:flex;gap:.6rem;flex-wrap:wrap}
     .social-btn{font-family:var(--mono);font-size:.7rem;font-weight:500;padding:.45rem 1rem;border-radius:6px;text-decoration:none;border:1px solid var(--border2);color:var(--muted);background:var(--surface2);transition:all .2s;display:flex;align-items:center;gap:.45rem}
     .social-btn:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-bg);box-shadow:0 0 16px var(--cyan-glow)}
-
     .value-strip{background:var(--surface);border-bottom:1px solid var(--border);position:relative;z-index:1}
     .value-inner{max-width:1140px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:repeat(3,1fr)}
     .value-item{padding:2rem 1.75rem;border-right:1px solid var(--border);transition:background .2s}
@@ -85,7 +71,6 @@
     .vi-ds .value-icon{color:var(--emerald)}.vi-ds .value-icon::before{background:var(--emerald);box-shadow:0 0 6px var(--emerald)}
     .value-title{font-family:var(--display);font-size:1rem;font-weight:700;color:#ffffff;margin-bottom:.5rem}
     .value-desc{font-size:.83rem;color:#cbd5e1;line-height:1.72}
-
     .container{max-width:1140px;margin:0 auto;padding:0 2rem;position:relative;z-index:1}
     .section{padding:3.5rem 0}
     .section-header{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem}
@@ -94,7 +79,6 @@
     .section-sub{font-size:.83rem;color:var(--muted);margin-top:.2rem}
     .section-anchor{font-family:var(--mono);font-size:.66rem;color:var(--muted2);margin-left:auto;text-decoration:none}
     .section-anchor:hover{color:var(--cyan)}
-
     .skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:1rem}
     .skill-group{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;transition:border-color .25s,transform .25s,box-shadow .25s}
     .skill-group:hover{border-color:rgba(0,229,255,0.25);transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,229,255,0.05)}
@@ -107,7 +91,6 @@
     .skill-tag.emerald{background:var(--emerald-bg);color:var(--emerald);border-color:rgba(52,211,153,0.22)}
     .skill-tag.amber{background:var(--amber-bg);color:var(--amber);border-color:rgba(251,191,36,0.22)}
     .skill-tag.rose{background:var(--rose-bg);color:var(--rose);border-color:rgba(251,113,133,0.22)}
-
     .certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
     .cert-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;display:flex;align-items:flex-start;gap:1rem;transition:border-color .2s,box-shadow .2s,transform .2s}
     .cert-card:hover{border-color:rgba(0,229,255,0.35);box-shadow:0 0 24px var(--cyan-glow);transform:translateY(-2px)}
@@ -121,12 +104,10 @@
     .s-done{background:var(--emerald-bg);color:var(--emerald);border:1px solid rgba(52,211,153,0.2)}
     .s-progress{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(251,191,36,0.2);animation:blink 2s ease-in-out infinite}
     @keyframes blink{0%,100%{opacity:1}50%{opacity:.55}}
-
     .filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.75rem}
     .filter-btn{font-family:var(--mono);font-size:.67rem;font-weight:500;padding:.35rem .9rem;border-radius:20px;border:1px solid var(--border2);color:var(--muted);background:var(--surface);cursor:pointer;transition:all .15s;letter-spacing:.04em}
     .filter-btn:hover{border-color:var(--cyan);color:var(--cyan);background:var(--cyan-bg)}
     .filter-btn.active{background:var(--cyan);color:#07090e;border-color:var(--cyan);font-weight:700}
-
     .projects-grid{display:grid;gap:1.25rem}
     .project-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;transition:border-color .25s,box-shadow .25s,transform .25s}
     .project-card:hover{border-color:rgba(0,229,255,0.28);box-shadow:0 6px 32px rgba(0,229,255,0.07);transform:translateY(-2px)}
@@ -140,6 +121,7 @@
     .pa-data{background:linear-gradient(180deg,var(--emerald),#059669)}
     .pa-ds{background:linear-gradient(180deg,var(--rose),#e11d48)}
     .pa-multicloud{background:linear-gradient(180deg,#00e5ff 0%,#a78bfa 50%,#34d399 100%)}
+    .pa-selfservice{background:linear-gradient(180deg,#00e5ff 0%,#00c896 50%,#a78bfa 100%)}
     .project-body{padding:1.75rem 2rem;flex:1}
     .project-header{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.75rem}
     .project-title{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--text)}
@@ -150,6 +132,7 @@
     .pb-data{background:var(--emerald-bg);color:var(--emerald);border:1px solid rgba(52,211,153,0.2)}
     .pb-ds{background:var(--rose-bg);color:var(--rose);border:1px solid rgba(251,113,133,0.2)}
     .pb-multicloud{background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(167,139,250,0.08));color:var(--cyan);border:1px solid rgba(0,229,255,0.2)}
+    .pb-selfservice{background:linear-gradient(135deg,rgba(0,229,255,0.08),rgba(0,200,150,0.08));color:var(--cyan);border:1px solid rgba(0,229,255,0.25)}
     .project-desc{font-size:.87rem;color:var(--muted);line-height:1.75;margin-bottom:1.1rem}
     .project-highlights{list-style:none;margin-bottom:1.25rem;display:grid;gap:.35rem}
     .project-highlights li{font-size:.82rem;color:var(--muted);display:flex;align-items:baseline;gap:.5rem;line-height:1.55}
@@ -159,7 +142,6 @@
     .tech-tag{font-family:var(--mono);font-size:.63rem;padding:.18rem .5rem;background:var(--surface2);color:var(--muted);border-radius:4px;border:1px solid var(--border)}
     .project-link{font-family:var(--mono);font-size:.68rem;font-weight:600;color:var(--cyan);text-decoration:none;display:flex;align-items:center;gap:.35rem;padding:.38rem .85rem;border:1px solid rgba(0,229,255,0.35);border-radius:6px;transition:all .18s;white-space:nowrap;letter-spacing:.05em}
     .project-link:hover{background:var(--cyan);color:#07090e;box-shadow:0 0 16px rgba(0,229,255,0.35)}
-
     .contact-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:2.5rem;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap;position:relative;overflow:hidden;transition:border-color .25s,box-shadow .25s}
     .contact-card:hover{border-color:rgba(0,229,255,0.3);box-shadow:0 8px 40px rgba(0,229,255,0.08)}
     .contact-card::before{content:'';position:absolute;bottom:-80px;right:-80px;width:280px;height:280px;background:radial-gradient(circle,rgba(0,229,255,0.05) 0%,transparent 70%);pointer-events:none}
@@ -167,21 +149,15 @@
     .contact-card p{font-size:.87rem;color:var(--muted)}
     .btn-primary{font-family:var(--mono);font-size:.76rem;font-weight:700;padding:.75rem 1.5rem;border-radius:8px;background:var(--cyan);color:#07090e;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;transition:all .2s;letter-spacing:.05em;white-space:nowrap}
     .btn-primary:hover{background:#33ecff;box-shadow:0 0 24px rgba(0,229,255,0.45);transform:translateY(-1px)}
-
     .section-divider{border:none;border-top:1px solid var(--border)}
     footer{background:var(--surface);border-top:1px solid var(--border);padding:1.75rem 0;text-align:center;position:relative;z-index:1}
     footer p{font-family:var(--mono);font-size:.68rem;color:var(--muted2);line-height:1.9}
     footer span{color:var(--cyan)}
-
     @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-    .hero-eyebrow{animation:fadeUp .5s ease both}
-    .hero-name{animation:fadeUp .5s .08s ease both}
-    .hero-title{animation:fadeUp .5s .14s ease both}
-    .hero-badges{animation:fadeUp .5s .18s ease both}
-    .hero-desc{animation:fadeUp .5s .22s ease both}
-    .hero-kpi{animation:fadeUp .5s .28s ease both}
+    .hero-eyebrow{animation:fadeUp .5s ease both}.hero-name{animation:fadeUp .5s .08s ease both}
+    .hero-title{animation:fadeUp .5s .14s ease both}.hero-badges{animation:fadeUp .5s .18s ease both}
+    .hero-desc{animation:fadeUp .5s .22s ease both}.hero-kpi{animation:fadeUp .5s .28s ease both}
     .hero-links{animation:fadeUp .5s .34s ease both}
-
     @media(max-width:860px){.value-inner{grid-template-columns:1fr}.value-item{border-right:none;border-bottom:1px solid var(--border)}.value-item:last-child{border-bottom:none}}
     @media(max-width:640px){.hero-inner{grid-template-columns:1fr;text-align:center}.avatar-wrap{margin:0 auto}.hero-eyebrow,.hero-badges,.hero-kpi,.hero-links{justify-content:center}.hero-desc{border-left:none;border-top:2px solid var(--cyan);padding-left:0;padding-top:1rem}.nav-links{display:none}}
   </style>
@@ -211,13 +187,11 @@
       <div class="hero-eyebrow">MLOps · DevOps · Data Science · DevSecOps</div>
       <h1 class="hero-name">Fernandez <span>Nntamo</span></h1>
       <p class="hero-title">MLOps Engineer & Architect | DevOps Engineer · <strong>M.Sc. Statistik</strong></p>
-
       <div class="hero-badges">
         <span class="hero-badge badge-mlops">MLOps & Model Serving</span>
         <span class="hero-badge badge-devops">DevOps & Cloud Architecture</span>
         <span class="hero-badge badge-ds">Data Science & Model Intelligence</span>
       </div>
-
       <p class="hero-desc">
         Mit <strong>über 7 Jahren Erfahrung in Data Science</strong> und
         <strong>über 4 Jahren an der Schnittstelle von DevOps, MLOps und Data Science</strong> —
@@ -226,11 +200,7 @@
         Als DevOps Engineer baue ich die Infrastruktur, die sie am Leben hält.
         Als MLOps Architect verbinde ich beides zu <strong>robusten, selbstheilenden ML-Systemen</strong> —
         mit automatisiertem Retraining, Inference-Monitoring und gesicherten Endpunkten.
-        Referenzprojekte im Finanz- und Softwarebereich.
-        wo eine selbst konzipierte Echtzeit-Anomalieerkennung ungeplante Maschinenausfälle
-        um <strong>ca. 30 % reduziert</strong> hat.
       </p>
-
       <div class="hero-kpi">
         <div class="kpi"><span class="kpi-value">7+</span><span class="kpi-label">Jahre Erfahrung</span></div>
         <div class="kpi"><span class="kpi-value">100%</span><span class="kpi-label">Automated pipelines</span></div>
@@ -238,10 +208,9 @@
         <div class="kpi"><span class="kpi-value">3</span><span class="kpi-label">MLOps stacks · SageMaker · Vertex AI · Azure ML</span></div>
         <div class="kpi"><span class="kpi-value">0</span><span class="kpi-label">Static credentials</span></div>
         <div class="kpi"><span class="kpi-value">0</span><span class="kpi-label">Root containers</span></div>
-        <div class="kpi"><span class="kpi-value">−30%</span><span class="kpi-label">Unplanned downtime </span></div>
+        <div class="kpi"><span class="kpi-value">−30%</span><span class="kpi-label">Unplanned downtime</span></div>
         <div class="kpi"><span class="kpi-value">CKA</span><span class="kpi-label">in Vorbereitung</span></div>
       </div>
-
       <div style="display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.6rem">
         <span style="font-family:var(--mono);font-size:.61rem;font-weight:600;padding:.2rem .65rem;border-radius:20px;background:rgba(251,113,133,0.08);color:#fb7185;border:1px solid rgba(251,113,133,0.2)">Zero-Trust Network</span>
         <span style="font-family:var(--mono);font-size:.61rem;font-weight:600;padding:.2rem .65rem;border-radius:20px;background:rgba(0,229,255,0.07);color:var(--cyan);border:1px solid rgba(0,229,255,0.2)">Keyless OIDC Auth</span>
@@ -249,13 +218,11 @@
         <span style="font-family:var(--mono);font-size:.61rem;font-weight:600;padding:.2rem .65rem;border-radius:20px;background:rgba(52,211,153,0.08);color:var(--emerald);border:1px solid rgba(52,211,153,0.2)">Runtime Secrets only</span>
         <span style="font-family:var(--mono);font-size:.61rem;font-weight:600;padding:.2rem .65rem;border-radius:20px;background:rgba(251,191,36,0.08);color:var(--amber);border:1px solid rgba(251,191,36,0.2)">DevSecOps by design</span>
       </div>
-
       <div class="hero-links">
         <a href="https://github.com/nntamo" target="_blank" class="social-btn">
           <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
           GitHub
         </a>
-
       </div>
     </div>
   </div>
@@ -271,12 +238,12 @@
     <div class="value-item vi-devops">
       <div class="value-icon">DevOps Engineer</div>
       <div class="value-title">Infrastruktur, die ML erst möglich macht — und nie ausfällt</div>
-      <div class="value-desc">CI/CD/CT-Pipelines, Autoscaling HPA/VPA, Zero-Trust-Netzwerke und DevSecOps auf Kubernetes — die Plattform, auf der Modelle sicher, schnell und reproduzierbar in Produktion gehen. Ergänzt durch konzipierte Disaster-Recovery-Strategien: RTO/RPO-Planung, automatisierte Backups, Failover-Mechanismen und getestete Wiederherstellungsprozeduren — weil Ausfälle in ML-Produktionsumgebungen keine Option sind.</div>
+      <div class="value-desc">CI/CD/CT-Pipelines, Autoscaling HPA/VPA, Zero-Trust-Netzwerke und DevSecOps auf Kubernetes — die Plattform, auf der Modelle sicher, schnell und reproduzierbar in Produktion gehen. Ergänzt durch konzipierte Disaster-Recovery-Strategien: RTO/RPO-Planung, automatisierte Backups, Failover-Mechanismen und getestete Wiederherstellungsprozeduren.</div>
     </div>
     <div class="value-item vi-ds">
       <div class="value-icon">Data Scientist & Data Engineer</div>
       <div class="value-title">Der Blick ins Modell — und auf die Daten dahinter</div>
-      <div class="value-desc">Statistisches Fundament (M.Sc.) und praktische ML/DL-Erfahrung ermöglichen es, Modellverhalten zu verstehen und Qualitätsverluste früh zu erkennen. Dazu: Echtzeit-Streaming mit Kafka, Azure Data Platform mit Databricks, sowie Storage-Optimierung — Indexierung, Vacuum, Backup und Partitionierung — für saubere, performante Datenpipelines als Grundlage jedes ML-Systems.</div>
+      <div class="value-desc">Statistisches Fundament (M.Sc.) und praktische ML/DL-Erfahrung ermöglichen es, Modellverhalten zu verstehen und Qualitätsverluste früh zu erkennen. Dazu: Echtzeit-Streaming mit Kafka, Azure Data Platform mit Databricks, sowie Storage-Optimierung für saubere, performante Datenpipelines als Grundlage jedes ML-Systems.</div>
     </div>
   </div>
 </div>
@@ -296,80 +263,37 @@
       <div class="skill-group">
         <div class="skill-group-title">Cloud & Infrastruktur</div>
         <div class="skill-tags">
-          <span class="skill-tag cyan">AWS EKS</span><span class="skill-tag cyan">Azure</span>
-          <span class="skill-tag cyan">GCP</span>
-          <span class="skill-tag cyan">Terraform</span><span class="skill-tag cyan">Ansible</span>
-          <span class="skill-tag cyan">Kubernetes</span><span class="skill-tag cyan">Helm</span>
-          <span class="skill-tag cyan">Argo CD</span><span class="skill-tag cyan">Proxmox VE</span>
-          <span class="skill-tag cyan">Mendix Cloud</span>
-          <span class="skill-tag cyan">Disaster Recovery</span>
-          <span class="skill-tag cyan">RTO / RPO Planung</span>
-          <span class="skill-tag cyan">Failover & Backup</span>
-          <span class="skill-tag cyan">High Availability</span>
+          <span class="skill-tag cyan">AWS EKS</span><span class="skill-tag cyan">Azure</span><span class="skill-tag cyan">GCP</span><span class="skill-tag cyan">Terraform</span><span class="skill-tag cyan">Ansible</span><span class="skill-tag cyan">Kubernetes</span><span class="skill-tag cyan">Helm</span><span class="skill-tag cyan">Argo CD</span><span class="skill-tag cyan">Proxmox VE</span><span class="skill-tag cyan">Mendix Cloud</span><span class="skill-tag cyan">Disaster Recovery</span><span class="skill-tag cyan">RTO / RPO Planung</span><span class="skill-tag cyan">Failover & Backup</span><span class="skill-tag cyan">High Availability</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">CI/CD & DevSecOps</div>
         <div class="skill-tags">
-          <span class="skill-tag amber">GitLab CI</span><span class="skill-tag amber">GitHub Actions</span>
-          <span class="skill-tag amber">Jenkins</span><span class="skill-tag amber">Argo Workflows</span>
-          <span class="skill-tag amber">OIDC / JWT</span>
-          <span class="skill-tag amber">WireGuard VPN</span>
-          <span class="skill-tag amber">SonarQube</span><span class="skill-tag amber">Trivy</span>
-          <span class="skill-tag amber">Checkov</span><span class="skill-tag amber">Docker</span>
-          <span class="skill-tag amber">Kustomize</span>
+          <span class="skill-tag amber">GitLab CI</span><span class="skill-tag amber">GitHub Actions</span><span class="skill-tag amber">Jenkins</span><span class="skill-tag amber">Argo Workflows</span><span class="skill-tag amber">OIDC / JWT</span><span class="skill-tag amber">WireGuard VPN</span><span class="skill-tag amber">SonarQube</span><span class="skill-tag amber">Trivy</span><span class="skill-tag amber">Checkov</span><span class="skill-tag amber">Docker</span><span class="skill-tag amber">Kustomize</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">MLOps & Model Lifecycle</div>
         <div class="skill-tags">
-          <span class="skill-tag violet">MLflow</span><span class="skill-tag violet">SageMaker Pipelines</span>
-          <span class="skill-tag violet">Azure ML Pipelines</span>
-          <span class="skill-tag violet">Vertex AI</span>
-          <span class="skill-tag violet">vLLM</span>
-          <span class="skill-tag violet">TensorRT</span><span class="skill-tag violet">ONNX</span>
-          <span class="skill-tag violet">Kedro</span><span class="skill-tag violet">Databricks</span>
-          <span class="skill-tag violet">Airflow</span><span class="skill-tag violet">Parashift AI</span>
+          <span class="skill-tag violet">MLflow</span><span class="skill-tag violet">SageMaker Pipelines</span><span class="skill-tag violet">Azure ML Pipelines</span><span class="skill-tag violet">Vertex AI</span><span class="skill-tag violet">vLLM</span><span class="skill-tag violet">TensorRT</span><span class="skill-tag violet">ONNX</span><span class="skill-tag violet">Kedro</span><span class="skill-tag violet">Databricks</span><span class="skill-tag violet">Airflow</span><span class="skill-tag violet">Parashift AI</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">Data Science & ML/DL</div>
         <div class="skill-tags">
-          <span class="skill-tag rose">PyTorch</span><span class="skill-tag rose">TensorFlow</span>
-          <span class="skill-tag rose">scikit-learn</span><span class="skill-tag rose">OpenCV</span>
-          <span class="skill-tag rose">YOLO · CNN · RNN</span>
-          <span class="skill-tag rose">Zeitreihenanalyse</span>
-          <span class="skill-tag rose">Feature Engineering</span>
-          <span class="skill-tag rose">Explainable AI</span>
-          <span class="skill-tag rose">PySpark</span>
+          <span class="skill-tag rose">PyTorch</span><span class="skill-tag rose">TensorFlow</span><span class="skill-tag rose">scikit-learn</span><span class="skill-tag rose">OpenCV</span><span class="skill-tag rose">YOLO · CNN · RNN</span><span class="skill-tag rose">Zeitreihenanalyse</span><span class="skill-tag rose">Feature Engineering</span><span class="skill-tag rose">Explainable AI</span><span class="skill-tag rose">PySpark</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">Monitoring & Model Quality</div>
         <div class="skill-tags">
-          <span class="skill-tag cyan">Prometheus</span><span class="skill-tag cyan">Grafana</span>
-          <span class="skill-tag cyan">Alertmanager</span><span class="skill-tag cyan">Loki</span>
-          <span class="skill-tag cyan">Datendrift-Erkennung</span>
-          <span class="skill-tag cyan">Modell-QA</span><span class="skill-tag cyan">FastAPI</span>
+          <span class="skill-tag cyan">Prometheus</span><span class="skill-tag cyan">Grafana</span><span class="skill-tag cyan">Alertmanager</span><span class="skill-tag cyan">Loki</span><span class="skill-tag cyan">Datendrift-Erkennung</span><span class="skill-tag cyan">Modell-QA</span><span class="skill-tag cyan">FastAPI</span>
         </div>
       </div>
       <div class="skill-group">
         <div class="skill-group-title">Data Engineering & Streaming</div>
         <div class="skill-tags">
-          <span class="skill-tag emerald">Kafka</span>
-          <span class="skill-tag emerald">Spark / PySpark</span>
-          <span class="skill-tag emerald">Databricks</span>
-          <span class="skill-tag emerald">Azure Data Lake</span>
-          <span class="skill-tag emerald">Delta Lake</span>
-          <span class="skill-tag emerald">Medallion Architecture</span>
-          <span class="skill-tag emerald">PostgreSQL</span>
-          <span class="skill-tag emerald">OPC UA / MQTT</span>
-          <span class="skill-tag emerald">RDF / SPARQL</span>
-          <span class="skill-tag emerald">InfluxDB</span>
-          <span class="skill-tag emerald">Indexierung & Vacuum</span>
-          <span class="skill-tag emerald">Backup & Partitionierung</span>
-          <span class="skill-tag emerald">Nvidia Jetson</span>
-          <span class="skill-tag emerald">Raspberry Pi 5</span>
+          <span class="skill-tag emerald">Kafka</span><span class="skill-tag emerald">Spark / PySpark</span><span class="skill-tag emerald">Databricks</span><span class="skill-tag emerald">Azure Data Lake</span><span class="skill-tag emerald">Delta Lake</span><span class="skill-tag emerald">Medallion Architecture</span><span class="skill-tag emerald">PostgreSQL</span><span class="skill-tag emerald">OPC UA / MQTT</span><span class="skill-tag emerald">RDF / SPARQL</span><span class="skill-tag emerald">InfluxDB</span><span class="skill-tag emerald">Indexierung & Vacuum</span><span class="skill-tag emerald">Backup & Partitionierung</span><span class="skill-tag emerald">Nvidia Jetson</span><span class="skill-tag emerald">Raspberry Pi 5</span>
         </div>
       </div>
     </div>
@@ -437,14 +361,88 @@
     </div>
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filterProjects('all',this)">Alle</button>
-      <button class="filter-btn" onclick="filterProjects('devops',this)">DevOps · Cloud</button>
-      <button class="filter-btn" onclick="filterProjects('cicd',this)">CI/CD</button>
       <button class="filter-btn" onclick="filterProjects('mlops',this)">MLOps</button>
+      <button class="filter-btn" onclick="filterProjects('cicd',this)">CI/CD</button>
+      <button class="filter-btn" onclick="filterProjects('devops',this)">DevOps · Cloud</button>
       <button class="filter-btn" onclick="filterProjects('ds',this)">Data Science</button>
       <button class="filter-btn" onclick="filterProjects('data',this)">Data Engineering</button>
     </div>
     <div class="projects-grid">
 
+      <!-- 1. FEATURED: Multi-Cloud CI/CD MLOps -->
+      <div class="project-card" data-category="cicd mlops">
+        <div class="project-accent pa-multicloud"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div>
+              <div style="font-family:var(--mono);font-size:.58rem;color:var(--cyan);letter-spacing:.14em;margin-bottom:.4rem;opacity:.75">★ FEATURED PROJECT</div>
+              <div class="project-title">MLOps Central CI/CD — Multi-Cloud Infrastructure</div>
+            </div>
+            <span class="project-badge pb-multicloud">CI/CD · MLOps · DevSecOps</span>
+          </div>
+          <p class="project-desc">Eine produktionsreife MLOps-Plattform, die Modelle über AWS, Azure und GCP ausliefert — ohne ein einziges gespeichertes Credential, ohne manuelle Key-Rotation, ohne Kompromisse bei der Sicherheit auf irgendeiner Ebene.</p>
+          <ul class="project-highlights">
+            <li>Zentrales GitLab-Repo-Pattern — 5 autonome Repos konvergieren in einem einzigen Orchestrierungspunkt mit vollständiger Isolation zwischen den Domains</li>
+            <li>Keyless OIDC/JWT-Authentifizierung gegen AWS STS, Azure Entra ID und GCP STS — ein JWT pro Job, zur Laufzeit generiert, nach ~1h automatisch abgelaufen, nichts gespeichert</li>
+            <li>EC2 Self-hosted Runner mit VPN/WireGuard-Tunnel zu privaten Cloud-Ressourcen und IAM Least-Privilege pro Job</li>
+            <li>Defense-in-Depth über 5 unabhängige Sicherheitsebenen: VPN/WireGuard · TLS 1.2+ · OIDC/JWT · IAM Least-Privilege · Secrets Manager</li>
+            <li>Obligatorische Pipeline-Gates: check → analyse → apply → deploy — keine Stage kann übersprungen werden</li>
+            <li><strong style="color:var(--cyan)">0 credentials gespeichert</strong> — 100% keyless Authentifizierung über 3 Clouds gleichzeitig</li>
+          </ul>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">GitLab CI</span><span class="tech-tag">OIDC / JWT</span><span class="tech-tag">AWS STS</span><span class="tech-tag">Azure Entra ID</span><span class="tech-tag">GCP STS</span><span class="tech-tag">EC2</span><span class="tech-tag">WireGuard</span><span class="tech-tag">Terraform</span><span class="tech-tag">SageMaker</span><span class="tech-tag">Vertex AI</span><span class="tech-tag">Azure ML</span>
+            </div>
+            <div style="display:flex;gap:.5rem">
+              <a href="https://github.com/nntamo/mlops-multicloud-cicd#readme" target="_blank" class="project-link" style="border-color:rgba(167,139,250,0.35);color:var(--violet)">Docs →</a>
+              <a href="https://github.com/nntamo/mlops-multicloud-cicd" target="_blank" class="project-link">Repo →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. NEW: Self-Service Platform -->
+      <div class="project-card" data-category="devops cicd">
+        <div class="project-accent pa-selfservice"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div>
+              <div style="font-family:var(--mono);font-size:.58rem;color:var(--cyan);letter-spacing:.14em;margin-bottom:.4rem;opacity:.8">★ NEW PROJECT</div>
+              <div class="project-title">DevOps Self-Service Platform — Developer Portal</div>
+            </div>
+            <span class="project-badge pb-selfservice">DevOps · IaC · Self-Service</span>
+          </div>
+          <p class="project-desc">
+            Produktionsreife Self-Service-Plattform — Entwickler provisionieren Cloud-Ressourcen
+            autonom über ein React-Portal, ohne auf den DevOps Engineer zu warten.
+            Terraform-Module, GitHub Actions CI/CD und ein vollständiges Approval-Gate für Production.
+          </p>
+          <ul class="project-highlights">
+            <li>Wiederverwendbare Terraform-Module für VPC, EKS, RDS, S3, ECR, ElastiCache und SQS — environment-aware, versioniert</li>
+            <li>GitHub Actions Pipeline: <strong style="color:var(--cyan)">tfsec · Checkov · terraform plan → apply</strong> — Security-Gate vor jedem Deployment, kein manueller Eingriff</li>
+            <li>Dynamische Kostenschätzung pro Umgebung (dev × 1 / staging × 1.5 / prod × 2) — direkt im Provisioning-Workflow sichtbar</li>
+            <li>Duplicate-Detection gegen den Terraform State — verhindert Ressourcenkonflikte vor dem Apply</li>
+            <li>Modulares Umgebungsdesign: dev / staging / prod als isolierte Terraform Workspaces mit Remote State auf S3 + DynamoDB Locking</li>
+          </ul>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Terraform</span>
+              <span class="tech-tag">AWS EKS</span>
+              <span class="tech-tag">GitHub Actions</span>
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">tfsec</span>
+              <span class="tech-tag">Checkov</span>
+              <span class="tech-tag">Helm</span>
+              <span class="tech-tag">Prometheus</span>
+              <span class="tech-tag">OIDC</span>
+            </div>
+            <a href="https://github.com/nntamo/devops-self-service-platform" target="_blank" class="project-link" style="border-color:rgba(0,229,255,0.35);color:var(--cyan)">Repo →</a>
+          </div>
+        </div>
+      </div>
+      <!-- ══════════════════════════════════════════════════════════ -->
+
+      <!-- 3. DevOps AWS -->
       <div class="project-card" data-category="devops">
         <div class="project-accent pa-devops"></div>
         <div class="project-body">
@@ -458,88 +456,18 @@
             <li>CI/CD via GitHub Actions — Build → ECR → EKS ohne manuelle Schritte</li>
             <li>Prometheus + Grafana Monitoring mit Alert-Regeln und HPA Autoscaling</li>
             <li>DevSecOps: RBAC, Network Policies, SonarQube, Secrets-Management, IAM</li>
-            <li><strong style="color:var(--cyan)">Disaster Recovery konzipiert und implementiert</strong> — RTO/RPO-Ziele definiert, automatisierte Backups, Multi-AZ Failover und getestete Wiederherstellungsprozeduren für unterbrechungsfreien Betrieb</li>
+            <li><strong style="color:var(--cyan)">Disaster Recovery konzipiert und implementiert</strong> — RTO/RPO-Ziele definiert, automatisierte Backups, Multi-AZ Failover und getestete Wiederherstellungsprozeduren</li>
           </ul>
           <div class="project-footer">
             <div class="tech-tags">
-              <span class="tech-tag">AWS EKS</span><span class="tech-tag">Terraform</span>
-              <span class="tech-tag">Kustomize</span><span class="tech-tag">Helm</span>
-              <span class="tech-tag">Prometheus</span><span class="tech-tag">GitHub Actions</span>
+              <span class="tech-tag">AWS EKS</span><span class="tech-tag">Terraform</span><span class="tech-tag">Kustomize</span><span class="tech-tag">Helm</span><span class="tech-tag">Prometheus</span><span class="tech-tag">GitHub Actions</span>
             </div>
             <a href="https://github.com/nntamo/Project-DevOps" target="_blank" class="project-link">Repo →</a>
           </div>
         </div>
       </div>
 
-      <div class="project-card" data-category="cicd">
-        <div class="project-accent pa-cicd"></div>
-        <div class="project-body">
-          <div class="project-header">
-            <div class="project-title">Jenkins CI/CD — FastAPI Microservices auf Kubernetes</div>
-            <span class="project-badge pb-cicd">CI/CD · DevSecOps</span>
-          </div>
-          <p class="project-desc">13-stufige Production-Pipeline für FastAPI über 4 Umgebungen — Sicherheit und Qualität als Architekturentscheidung, nicht als Nachgedanke.</p>
-          <ul class="project-highlights">
-            <li>4 Namespaces (dev/qa/staging/prod) mit Rolling Updates und 3 Replicas</li>
-            <li>TLS 1.2/1.3, HSTS, Pods ohne Root-Rechte, Secrets nur zur Laufzeit injiziert</li>
-            <li>Manuelle Freigaben + automatische Git-Merges zwischen Stufen</li>
-          </ul>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span class="tech-tag">Jenkins</span><span class="tech-tag">FastAPI</span>
-              <span class="tech-tag">Kubernetes</span><span class="tech-tag">NGINX</span>
-              <span class="tech-tag">Docker</span><span class="tech-tag">Helm</span>
-            </div>
-            <a href="https://github.com/nntamo/jenskin-pipeline-cicd" target="_blank" class="project-link">Repo →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- NOUVEAU PROJET : MLOps Central CI/CD Multi-Cloud -->
-      <div class="project-card" data-category="cicd mlops">
-        <div class="project-accent pa-multicloud"></div>
-        <div class="project-body">
-          <div class="project-header">
-            <div>
-              <div style="font-family:var(--mono);font-size:.58rem;color:var(--cyan);letter-spacing:.14em;margin-bottom:.4rem;opacity:.75">★ FEATURED PROJECT</div>
-              <div class="project-title">MLOps Central CI/CD — Multi-Cloud Infrastructure</div>
-            </div>
-            <span class="project-badge pb-multicloud">CI/CD · MLOps · DevSecOps</span>
-          </div>
-          <p class="project-desc">
-            Eine produktionsreife MLOps-Plattform, die Modelle über AWS, Azure und GCP ausliefert —
-            ohne ein einziges gespeichertes Credential, ohne manuelle Key-Rotation, ohne Kompromisse bei der Sicherheit auf irgendeiner Ebene.
-          </p>
-          <ul class="project-highlights">
-            <li>Zentrales GitLab-Repo-Pattern — 5 autonome Repos (model-build, model-deploy, infrastructure, inferenz, model-registry) konvergieren in einem einzigen Orchestrierungspunkt mit vollständiger Isolation zwischen den Domains</li>
-            <li>Keyless OIDC/JWT-Authentifizierung gegen AWS STS, Azure Entra ID und GCP STS — ein JWT pro Job, zur Laufzeit generiert, nach ~1h automatisch abgelaufen, nichts gespeichert</li>
-            <li>EC2 Self-hosted Runner — bewusste Wahl (Azure VM oder GCP Compute Engine wären äquivalent) mit VPN/WireGuard-Tunnel zu privaten Cloud-Ressourcen und IAM Least-Privilege pro Job</li>
-            <li>Defense-in-Depth über 5 unabhängige Sicherheitsebenen: VPN/WireGuard · TLS 1.2+ · OIDC/JWT · IAM Least-Privilege · Secrets Manager (HashiCorp Vault / AWS SSM / Azure Key Vault / GCP Secret Manager)</li>
-            <li>Obligatorische Pipeline-Gates: check → analyse → apply → deploy — keine Stage kann übersprungen werden, kein Deployment ohne vollständigen Audit-Trail</li>
-            <li><strong style="color:var(--cyan)">0 credentials gespeichert</strong> — 100% keyless Authentifizierung über 3 Clouds gleichzeitig</li>
-          </ul>
-          <div class="project-footer">
-            <div class="tech-tags">
-              <span class="tech-tag">GitLab CI</span>
-              <span class="tech-tag">OIDC / JWT</span>
-              <span class="tech-tag">AWS STS</span>
-              <span class="tech-tag">Azure Entra ID</span>
-              <span class="tech-tag">GCP STS</span>
-              <span class="tech-tag">EC2</span>
-              <span class="tech-tag">WireGuard</span>
-              <span class="tech-tag">Terraform</span>
-              <span class="tech-tag">SageMaker</span>
-              <span class="tech-tag">Vertex AI</span>
-              <span class="tech-tag">Azure ML</span>
-            </div>
-            <div style="display:flex;gap:.5rem">
-              <a href="https://github.com/nntamo/mlops-multicloud-cicd#readme" target="_blank" class="project-link" style="border-color:rgba(167,139,250,0.35);color:var(--violet)">Docs →</a>
-              <a href="https://github.com/nntamo/mlops-multicloud-cicd" target="_blank" class="project-link">Repo →</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <!-- 4. MLOps Model Lifecycle -->
       <div class="project-card" data-category="mlops">
         <div class="project-accent pa-mlops"></div>
         <div class="project-body">
@@ -556,15 +484,37 @@
           </ul>
           <div class="project-footer">
             <div class="tech-tags">
-              <span class="tech-tag">MLflow</span><span class="tech-tag">Kubernetes</span>
-              <span class="tech-tag">Argo Workflows</span><span class="tech-tag">Prometheus</span>
-              <span class="tech-tag">SageMaker</span><span class="tech-tag">Azure ML</span>
+              <span class="tech-tag">MLflow</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">Argo Workflows</span><span class="tech-tag">Prometheus</span><span class="tech-tag">SageMaker</span><span class="tech-tag">Azure ML</span>
             </div>
             <a href="https://github.com/nntamo/Data-Science" target="_blank" class="project-link">Repo →</a>
           </div>
         </div>
       </div>
 
+      <!-- 5. Jenkins CI/CD -->
+      <div class="project-card" data-category="cicd">
+        <div class="project-accent pa-cicd"></div>
+        <div class="project-body">
+          <div class="project-header">
+            <div class="project-title">Jenkins CI/CD — FastAPI Microservices auf Kubernetes</div>
+            <span class="project-badge pb-cicd">CI/CD · DevSecOps</span>
+          </div>
+          <p class="project-desc">13-stufige Production-Pipeline für FastAPI über 4 Umgebungen — Sicherheit und Qualität als Architekturentscheidung, nicht als Nachgedanke.</p>
+          <ul class="project-highlights">
+            <li>4 Namespaces (dev/qa/staging/prod) mit Rolling Updates und 3 Replicas</li>
+            <li>TLS 1.2/1.3, HSTS, Pods ohne Root-Rechte, Secrets nur zur Laufzeit injiziert</li>
+            <li>Manuelle Freigaben + automatische Git-Merges zwischen Stufen</li>
+          </ul>
+          <div class="project-footer">
+            <div class="tech-tags">
+              <span class="tech-tag">Jenkins</span><span class="tech-tag">FastAPI</span><span class="tech-tag">Kubernetes</span><span class="tech-tag">NGINX</span><span class="tech-tag">Docker</span><span class="tech-tag">Helm</span>
+            </div>
+            <a href="https://github.com/nntamo/jenskin-pipeline-cicd" target="_blank" class="project-link">Repo →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Data Science -->
       <div class="project-card" data-category="ds">
         <div class="project-accent pa-ds"></div>
         <div class="project-body">
@@ -581,16 +531,14 @@
           </ul>
           <div class="project-footer">
             <div class="tech-tags">
-              <span class="tech-tag">PyTorch</span><span class="tech-tag">TensorFlow</span>
-              <span class="tech-tag">YOLO</span><span class="tech-tag">TensorRT</span>
-              <span class="tech-tag">ONNX</span><span class="tech-tag">PySpark</span>
-              <span class="tech-tag">Databricks</span>
+              <span class="tech-tag">PyTorch</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">YOLO</span><span class="tech-tag">TensorRT</span><span class="tech-tag">ONNX</span><span class="tech-tag">PySpark</span><span class="tech-tag">Databricks</span>
             </div>
             <a href="https://github.com/nntamo/Data-Science" target="_blank" class="project-link">Repo →</a>
           </div>
         </div>
       </div>
 
+      <!-- 7. Data Engineering -->
       <div class="project-card" data-category="data">
         <div class="project-accent pa-data"></div>
         <div class="project-body">
@@ -602,16 +550,13 @@
           <ul class="project-highlights">
             <li>Echtzeit-Streaming mit Apache Kafka — mehrere tausend Events/Sekunde via OPC UA & MQTT</li>
             <li>Azure Data Platform mit Databricks — Medallion-Architektur (Bronze–Silver–Gold) auf Delta Lake</li>
-            <li>Storage-Optimierung: Indexierung, Vacuum, Partitionierung und automatisiertes Backup für performante Datenpipelines</li>
+            <li>Storage-Optimierung: Indexierung, Vacuum, Partitionierung und automatisiertes Backup</li>
             <li>Migration On-Premises → Azure SQL DB mit vollständiger DevOps-Integration</li>
             <li>Feature Store-Integration als saubere Datenbasis für ML-Modelle in der Produktion</li>
           </ul>
           <div class="project-footer">
             <div class="tech-tags">
-              <span class="tech-tag">Kafka</span><span class="tech-tag">Databricks</span>
-              <span class="tech-tag">Delta Lake</span><span class="tech-tag">Azure Data Lake</span>
-              <span class="tech-tag">PySpark</span><span class="tech-tag">Airflow</span>
-              <span class="tech-tag">PostgreSQL</span><span class="tech-tag">OPC UA</span>
+              <span class="tech-tag">Kafka</span><span class="tech-tag">Databricks</span><span class="tech-tag">Delta Lake</span><span class="tech-tag">Azure Data Lake</span><span class="tech-tag">PySpark</span><span class="tech-tag">Airflow</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">OPC UA</span>
             </div>
             <a href="https://github.com/nntamo/Cloud-Data-Engineering" target="_blank" class="project-link">Repo →</a>
           </div>
@@ -645,8 +590,8 @@
 
 <footer>
   <p>
-    © 2026 <span>Fernandez Nntamo</span> — MLOps Engineer & Architect · M.Sc. Statistik<br>
-    <span>"Data Science understands the model. DevOps keeps the platform running. MLOps connects both — permanently."</span>
+    &copy; 2026 <span>Fernandez Nntamo</span> &mdash; MLOps Engineer & Architect &middot; M.Sc. Statistik<br>
+    <span>"Data Science understands the model. DevOps keeps the platform running. MLOps connects both &mdash; permanently."</span>
   </p>
 </footer>
 
